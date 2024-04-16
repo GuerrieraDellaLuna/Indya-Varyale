@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://bejgwfewj80bw"]
+
+[ext_resource type="PackedScene" uid="uid://ch66gbgcgbkad" path="res://door.tscn" id="1_nh5iv"]
+[ext_resource type="PackedScene" uid="uid://duh6ppu233enu" path="res://monster.tscn" id="2_yh7kj"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_753m1"]
+size = Vector2(30, 50)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q8n66"]
+size = Vector2(5, 8)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bgle4"]
+size = Vector2(5, 14)
+
+[sub_resource type="Environment" id="Environment_d43j5"]
+background_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y683i"]
+size = Vector2(100, 8)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f6epr"]
+size = Vector2(8, 30)
+
+[node name="School" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3453, 0, -0.127007)
+mesh = SubResource("PlaneMesh_753m1")
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -8.26763, 5, 0)
+mesh = SubResource("PlaneMesh_753m1")
+
+[node name="Wall" type="Node3D" parent="."]
+
+[node name="Wall1" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.34829, 2.498, -0.0632656)
+mesh = SubResource("PlaneMesh_q8n66")
+
+[node name="Wall2" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -1.31381, 2.49444, 4.00095)
+mesh = SubResource("PlaneMesh_bgle4")
+
+[node name="Wall3" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -1.98112, 2.49444, -3.99371)
+mesh = SubResource("PlaneMesh_bgle4")
+
+[node name="Wall4" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -18.7769, 2.49444, -3.99402)
+mesh = SubResource("PlaneMesh_bgle4")
+
+[node name="Wall5" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, -18.7774, 2.49444, 3.99453)
+mesh = SubResource("PlaneMesh_bgle4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.187, 1.96889, 0)
+environment = SubResource("Environment_d43j5")
+fov = 60.0
+far = 20.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.648866, 3.94613, 0.0993397)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.08086, 3.94613, 0.0993397)
+
+[node name="Monster" parent="." instance=ExtResource("2_yh7kj")]
+transform = Transform3D(-0.00100068, 0, -0.02498, 0, 0.025, 0, 0.02498, 0, -0.00100068, -0.00237703, 0, 0)
+
+[node name="Hallway" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.6745, 0, 0)
+mesh = SubResource("PlaneMesh_y683i")
+
+[node name="Classroom" type="Node3D" parent="."]
+
+[node name="Wall6" type="MeshInstance3D" parent="Classroom"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 20.2886, 4.08731, -24.7802)
+mesh = SubResource("PlaneMesh_f6epr")
+skeleton = NodePath("../../Wall")
+
+[node name="Wall7" type="MeshInstance3D" parent="Classroom"]
+transform = Transform3D(-8.74228e-08, 4.37114e-08, -1, -1, 4.37114e-08, 8.74228e-08, 4.37114e-08, 1, 4.37114e-08, 20.1997, 4.08731, 25.0992)
+mesh = SubResource("PlaneMesh_f6epr")
+skeleton = NodePath("../../Wall")
+
+[node name="Ceiling2" type="MeshInstance3D" parent="Classroom"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -8.26763, 5, 0)
+mesh = SubResource("PlaneMesh_753m1")
+skeleton = NodePath("../..")
+
+[node name="DoorEnter" parent="Classroom" instance=ExtResource("1_nh5iv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.20572, 2.49536, -0.0480137)
+
+[node name="DoorExit" parent="Classroom" instance=ExtResource("1_nh5iv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7313, 2.49536, -24.1249)
