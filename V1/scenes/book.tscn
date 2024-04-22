@@ -1,0 +1,212 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhtiylvujfcb8"]
+
+[ext_resource type="Script" path="res://scripts/ui/book.gd" id="1_kbuhj"]
+[ext_resource type="Texture2D" uid="uid://d0aiyi63e128q" path="res://icon.svg" id="2_qcoc6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ciuo2"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7c2rh"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nb86d"]
+line_spacing = 6.0
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vb5df"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="BookUI" type="Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kbuhj")
+
+[node name="Temporary Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.027451, 0, 0.117647, 1)
+
+[node name="Book Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -350.0
+offset_right = 500.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.941176, 0.85098, 1)
+
+[node name="Book Divider" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -350.0
+offset_right = 1.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Page Title" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -337.0
+offset_bottom = -259.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "lorem ipsum"
+label_settings = SubResource("LabelSettings_ciuo2")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
+visible_characters = 128000
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 323.0
+offset_right = 867.0
+offset_bottom = 637.0
+texture = ExtResource("2_qcoc6")
+
+[node name="Page Number" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -479.0
+offset_top = 284.0
+offset_right = -439.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_7c2rh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = -302.0
+offset_right = 468.0
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Description" type="Label" parent="ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+text = "lorem ipsum"
+label_settings = SubResource("LabelSettings_nb86d")
+autowrap_mode = 3
+visible_characters = 128000
+visible_characters_behavior = 1
+
+[node name="Right Arrow" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 448.0
+offset_top = -342.0
+offset_right = 488.0
+offset_bottom = -308.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "→"
+label_settings = SubResource("LabelSettings_vb5df")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left Arrow" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = -342.0
+offset_right = -450.0
+offset_bottom = -308.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "←
+"
+label_settings = SubResource("LabelSettings_vb5df")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flip Left" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -350.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Flip Right" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -350.0
+offset_right = 501.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="pressed" from="Flip Left" to="." method="_on_flip_left_pressed"]
+[connection signal="pressed" from="Flip Right" to="." method="_on_flip_right_pressed"]
