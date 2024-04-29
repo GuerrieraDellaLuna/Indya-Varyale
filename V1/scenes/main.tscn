@@ -1,4 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dllo3od5a6l7y"]
+[gd_scene load_steps=9 format=3 uid="uid://dllo3od5a6l7y"]
+
+[ext_resource type="Script" path="res://scenes/CharacterBody3D.gd" id="1_bfx52"]
+[ext_resource type="PackedScene" uid="uid://b1y2uhml2gso1" path="res://assets/ImageToStl.com_monster.gltf" id="2_ifh5c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fynqy"]
 size = Vector3(8, 8, 0.01)
@@ -14,6 +17,9 @@ size = Vector2(3.5, 4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cwjrm"]
 size = Vector2(9, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mwak"]
+size = Vector3(1.76622, 2.03369, 1)
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(-0.0933823, -0.983243, -0.156569, -0.988823, 0.0732318, 0.129872, -0.11623, 0.166947, -0.979091, -6.54347e-05, 0, 0.0011059)
@@ -59,3 +65,14 @@ transform = Transform3D(-0.0896891, -0.989311, -0.114979, -0.991844, 0.0782228, 
 [node name="Roof" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.117382, 0.989503, 0.0842687, -0.165457, -0.0641829, 0.984124, 0.979203, -0.129461, 0.156187, -3.93077, 0.361849, 0.528831)
 mesh = SubResource("PlaneMesh_cwjrm")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.999999, 3.72529e-09, 3.72529e-08, -3.72529e-08, 0.999999, 7.45058e-08, -8.9407e-08, -1.3411e-07, 0.999999, -0.808621, 1.3785, 1.23521)
+script = ExtResource("1_bfx52")
+
+[node name="AuxScene" parent="CharacterBody3D" instance=ExtResource("2_ifh5c")]
+transform = Transform3D(-4.36557e-10, -0.00999998, 1.16415e-10, 0.00999998, -2.91038e-10, 0, -2.32831e-10, 2.32831e-10, 0.00999997, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(0.995605, 0.0151295, -0.0923983, -0.0143166, 0.999852, 0.00946394, 0.0925273, -0.00809962, 0.995677, -0.857143, 0.0123256, -0.0796592)
+shape = SubResource("BoxShape3D_4mwak")
