@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ske57ek6uenu"]
+[gd_scene load_steps=14 format=3 uid="uid://ske57ek6uenu"]
 
 [ext_resource type="PackedScene" uid="uid://c3dsyar533l1g" path="res://scenes/room.tscn" id="1_031q6"]
 [ext_resource type="PackedScene" uid="uid://b1qkdjowfalom" path="res://scenes/room_2.tscn" id="2_lqqy7"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://clthnsb5mc21i" path="res://scenes/room_4.tscn" id="4_1f5pm"]
 [ext_resource type="PackedScene" uid="uid://d1qicc0v8x270" path="res://scenes/room_5.tscn" id="4_8t8c1"]
 [ext_resource type="PackedScene" uid="uid://hta3k3n5qsop" path="res://scenes/room_6.tscn" id="6_h1knv"]
-[ext_resource type="PackedScene" uid="uid://duh6ppu233enu" path="res://scenes/monster.tscn" id="6_iq70h"]
 [ext_resource type="PackedScene" uid="uid://chsfvms1qb108" path="res://scenes/room_7.tscn" id="7_1iiqc"]
 [ext_resource type="PackedScene" uid="uid://0vmgfkmjhu32" path="res://scenes/room_8.tscn" id="8_p6br4"]
 [ext_resource type="PackedScene" uid="uid://bu5k0bfd3tk0b" path="res://scenes/room_9.tscn" id="9_bon01"]
@@ -20,6 +19,10 @@
 [sub_resource type="BoxMesh" id="BoxMesh_df7nd"]
 
 [node name="level_V2" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [node name="school_skeleton" type="Node3D" parent="."]
 
@@ -87,6 +90,3 @@ transform = Transform3D(1.09959, 0, 0, 0, 1, 0, 0, 0, 1.86752, 1.59864, 0, -1.13
 [node name="Room8" parent="." instance=ExtResource("8_p6br4")]
 
 [node name="Room9" parent="." instance=ExtResource("9_bon01")]
-
-[node name="Monster" parent="." instance=ExtResource("6_iq70h")]
-transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -1.29436, 0.0335709, 0.342913)

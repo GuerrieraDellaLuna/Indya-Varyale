@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://duh6ppu233enu"]
+[gd_scene load_steps=6 format=3 uid="uid://duh6ppu233enu"]
 
 [ext_resource type="PackedScene" uid="uid://b1y2uhml2gso1" path="res://assets/ImageToStl.com_monster.gltf" id="1_qdrkv"]
+[ext_resource type="Script" path="res://scenes/monster.gd" id="1_rvbts"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_17cgs"]
 animations = [{
@@ -15,28 +16,34 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6ro2w"]
+custom_solver_bias = 1.0
+radius = 100.0
+height = 200.0
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_es4yt"]
 height = 145.329
 
 [node name="Monster" type="CharacterBody3D"]
+script = ExtResource("1_rvbts")
 
 [node name="Sprite3D" type="AnimatedSprite3D" parent="."]
 sprite_frames = SubResource("SpriteFrames_17cgs")
 animation = &"idle"
 
 [node name="AuxScene" parent="Sprite3D" instance=ExtResource("1_qdrkv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -81.8592, 4.5)
 
 [node name="CameraController" type="Node3D" parent="Sprite3D"]
-top_level = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -60.508, 261.731)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Sprite3D/CameraController"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 146.974, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2504, 138.371, -333.93)
+shape = SubResource("CapsuleShape3D_6ro2w")
 
-[node name="Camera3D" type="Camera3D" parent="Sprite3D/CameraController/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0300903, 2.17146, -0.252151)
-fov = 179.0
+[node name="Zoom" type="XRCamera3D" parent="Sprite3D/CameraController/SpringArm3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(60.2212, 0, 0, 0, 1.1068, 0, 0, 0, 39.3822, 0, 88.5959, 0)
+transform = Transform3D(60.2212, 0, 0, 0, 1.1068, 0, 0, 0, 39.3822, 0, 3.03613, 0)
 shape = SubResource("CapsuleShape3D_es4yt")
