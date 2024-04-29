@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=3 uid="uid://ske57ek6uenu"]
+
+[ext_resource type="PackedScene" uid="uid://c3dsyar533l1g" path="res://scenes/room.tscn" id="1_031q6"]
+[ext_resource type="PackedScene" uid="uid://b1qkdjowfalom" path="res://scenes/room_2.tscn" id="2_lqqy7"]
+[ext_resource type="PackedScene" uid="uid://ba6s6yflv11pf" path="res://scenes/room_3.tscn" id="3_s1tkh"]
+[ext_resource type="PackedScene" uid="uid://clthnsb5mc21i" path="res://scenes/room_4.tscn" id="4_1f5pm"]
+[ext_resource type="PackedScene" uid="uid://d1qicc0v8x270" path="res://scenes/room_5.tscn" id="4_8t8c1"]
+[ext_resource type="PackedScene" uid="uid://hta3k3n5qsop" path="res://scenes/room_6.tscn" id="6_h1knv"]
+[ext_resource type="PackedScene" uid="uid://duh6ppu233enu" path="res://scenes/monster.tscn" id="6_iq70h"]
+[ext_resource type="PackedScene" uid="uid://chsfvms1qb108" path="res://scenes/room_7.tscn" id="7_1iiqc"]
+[ext_resource type="PackedScene" uid="uid://0vmgfkmjhu32" path="res://scenes/room_8.tscn" id="8_p6br4"]
+[ext_resource type="PackedScene" uid="uid://bu5k0bfd3tk0b" path="res://scenes/room_9.tscn" id="9_bon01"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7g2v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_igm40"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xj7w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_df7nd"]
+
+[node name="level_V2" type="Node3D"]
+
+[node name="school_skeleton" type="Node3D" parent="."]
+
+[node name="Wall1" type="StaticBody3D" parent="school_skeleton"]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 0.044, 0, 0.51451, -7.50257)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="school_skeleton/Wall1"]
+shape = SubResource("BoxShape3D_a7g2v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="school_skeleton/Wall1"]
+mesh = SubResource("BoxMesh_igm40")
+
+[node name="Wall2" type="StaticBody3D" parent="school_skeleton"]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 0.044, 0, 0.51451, 7.46438)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="school_skeleton/Wall2"]
+shape = SubResource("BoxShape3D_a7g2v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="school_skeleton/Wall2"]
+mesh = SubResource("BoxMesh_igm40")
+
+[node name="Wall3" type="StaticBody3D" parent="school_skeleton"]
+transform = Transform3D(-6.55671e-07, 0, 0.044, 0, 1, 0, -15, 0, -1.9233e-09, 7.47309, 0.51451, -0.0394852)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="school_skeleton/Wall3"]
+shape = SubResource("BoxShape3D_a7g2v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="school_skeleton/Wall3"]
+mesh = SubResource("BoxMesh_igm40")
+
+[node name="Wall4" type="StaticBody3D" parent="school_skeleton"]
+transform = Transform3D(-6.55671e-07, 0, 0.044, 0, 1, 0, -15, 0, -1.9233e-09, -7.49222, 0.51451, -0.0394852)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="school_skeleton/Wall4"]
+shape = SubResource("BoxShape3D_a7g2v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="school_skeleton/Wall4"]
+mesh = SubResource("BoxMesh_igm40")
+
+[node name="Floor" type="StaticBody3D" parent="school_skeleton"]
+transform = Transform3D(15, 0, 0, 0, 0.05, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="school_skeleton/Floor"]
+shape = SubResource("BoxShape3D_8xj7w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="school_skeleton/Floor"]
+mesh = SubResource("BoxMesh_df7nd")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="Room" parent="." instance=ExtResource("1_031q6")]
+
+[node name="Room2" parent="." instance=ExtResource("2_lqqy7")]
+
+[node name="Room3" parent="." instance=ExtResource("3_s1tkh")]
+
+[node name="Room4" parent="." instance=ExtResource("4_1f5pm")]
+
+[node name="Room5" parent="." instance=ExtResource("4_8t8c1")]
+transform = Transform3D(1.09959, 0, 0, 0, 1, 0, 0, 0, 1.86752, 1.59864, 0, -1.1381)
+
+[node name="Room6" parent="." instance=ExtResource("6_h1knv")]
+
+[node name="Room7" parent="." instance=ExtResource("7_1iiqc")]
+
+[node name="Room8" parent="." instance=ExtResource("8_p6br4")]
+
+[node name="Room9" parent="." instance=ExtResource("9_bon01")]
+
+[node name="Monster" parent="." instance=ExtResource("6_iq70h")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -1.29436, 0.0335709, 0.342913)

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://duh6ppu233enu"]
+
+[ext_resource type="PackedScene" uid="uid://b1y2uhml2gso1" path="res://assets/ImageToStl.com_monster.gltf" id="1_qdrkv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_17cgs"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_es4yt"]
+height = 145.329
+
+[node name="Monster" type="CharacterBody3D"]
+
+[node name="Sprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_17cgs")
+animation = &"idle"
+
+[node name="AuxScene" parent="Sprite3D" instance=ExtResource("1_qdrkv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.5)
+
+[node name="CameraController" type="Node3D" parent="Sprite3D"]
+top_level = true
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Sprite3D/CameraController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 146.974, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Sprite3D/CameraController/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0300903, 2.17146, -0.252151)
+fov = 179.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(60.2212, 0, 0, 0, 1.1068, 0, 0, 0, 39.3822, 0, 88.5959, 0)
+shape = SubResource("CapsuleShape3D_es4yt")
