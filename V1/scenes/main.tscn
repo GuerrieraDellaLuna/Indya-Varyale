@@ -1,4 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dllo3od5a6l7y"]
+[gd_scene load_steps=9 format=3 uid="uid://dllo3od5a6l7y"]
+
+[ext_resource type="Script" path="res://scenes/CharacterBody3D.gd" id="1_bfx52"]
+[ext_resource type="PackedScene" uid="uid://b1y2uhml2gso1" path="res://assets/ImageToStl.com_monster.gltf" id="2_ifh5c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fynqy"]
 size = Vector3(8, 8, 0.01)
@@ -15,8 +18,11 @@ size = Vector2(3.5, 4)
 [sub_resource type="PlaneMesh" id="PlaneMesh_cwjrm"]
 size = Vector2(9, 8)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mwak"]
+size = Vector3(1.76622, 2.03369, 1)
+
 [node name="Main" type="Node3D"]
-transform = Transform3D(-0.0933823, -0.983243, -0.156569, -0.988823, 0.0732318, 0.129872, -0.11623, 0.166947, -0.979091, -6.54347e-05, 0, 0.0011059)
+transform = Transform3D(-0.0933823, -0.983243, -0.156569, -0.988823, 0.0732318, 0.129872, -0.11623, 0.166947, -0.979091, -0.699355, 0.62738, -0.44637)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.118733, -0.0879648, 0.989022, -0.160675, -0.984642, -0.0682861, 0.979839, -0.150803, -0.131043, 0, 0, 0)
@@ -59,3 +65,14 @@ transform = Transform3D(-0.0896891, -0.989311, -0.114979, -0.991844, 0.0782228, 
 [node name="Roof" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.117382, 0.989503, 0.0842687, -0.165457, -0.0641829, 0.984124, 0.979203, -0.129461, 0.156187, -3.93077, 0.361849, 0.528831)
 mesh = SubResource("PlaneMesh_cwjrm")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.999998, -9.31323e-09, -1.49012e-08, -4.84288e-08, 0.999999, 1.19209e-07, -1.3411e-07, -2.23517e-07, 0.999999, 0.186207, 2.02027, 1.31563)
+script = ExtResource("1_bfx52")
+
+[node name="AuxScene" parent="CharacterBody3D" instance=ExtResource("2_ifh5c")]
+transform = Transform3D(-4.36557e-10, -0.00999998, 1.16415e-10, 0.00999998, -2.91038e-10, 0, -2.32831e-10, 2.32831e-10, 0.00999997, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(0.995605, 0.0151295, -0.0923983, -0.0143166, 0.999852, 0.00946394, 0.0925273, -0.00809962, 0.995677, -0.857143, 0.0123256, -0.0796592)
+shape = SubResource("BoxShape3D_4mwak")

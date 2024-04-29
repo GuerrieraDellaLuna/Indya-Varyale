@@ -21,6 +21,10 @@ AppConfig="*res://addons/maaacks_menus_template/base/scenes/Autoloads/AppConfig.
 SceneLoader="*res://addons/maaacks_menus_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 
+[dotnet]
+
+project/assembly_name="Prototype_V1"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/maaacks_menus_template/plugin.cfg")
