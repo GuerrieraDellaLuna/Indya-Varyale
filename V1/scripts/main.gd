@@ -8,6 +8,8 @@ var book_ui: BookUI;
 var can_open_book: bool = true;
 var book_open: bool = false;
 
+var fmod_event_emitter: FmodEventEmitter2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ui_container = %"UI Container";
@@ -16,6 +18,7 @@ func _ready():
 	book_ui = BookUI.create_new(book_data);
 	book_ui.hide();
 	ui_container.add_child(book_ui, false, Node.INTERNAL_MODE_DISABLED);
+	fmod_event_emitter = %FmodEventEmitter2D;
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
@@ -38,6 +41,7 @@ func _process(_delta):
 func open_book() -> void:
 	book_open = true;
 	book_ui.show();
+	fmod_event_emitter.play();
 	return;
 	
 func close_book() -> void:
