@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://duh6ppu233enu"]
+[gd_scene load_steps=6 format=3 uid="uid://bmt5e3uy7fwue"]
 
 [ext_resource type="PackedScene" uid="uid://b1y2uhml2gso1" path="res://assets/ImageToStl.com_monster.gltf" id="1_qdrkv"]
 [ext_resource type="Script" path="res://scenes/monster.gd" id="1_rvbts"]

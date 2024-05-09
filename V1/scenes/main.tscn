@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dllo3od5a6l7y"]
+[gd_scene load_steps=3 format=3 uid="uid://dllo3od5a6l7y"]
 
-[ext_resource type="PackedScene" uid="uid://ske57ek6uenu" path="res://scenes/level_v_2.tscn" id="1_h0xi1"]
+[ext_resource type="PackedScene" uid="uid://dj2r7r1r1wfwx" path="res://scenes/level_v_2.tscn" id="1_h0xi1"]
+[ext_resource type="PackedScene" uid="uid://bmt5e3uy7fwue" path="res://scenes/monster.tscn" id="2_adbs2"]
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54347e-05, 0, 0.0011059)
 
 [node name="level_V2" parent="." instance=ExtResource("1_h0xi1")]
 transform = Transform3D(1, -1.86265e-09, 0, -7.45058e-09, 1, 0, -7.45058e-09, -1.49012e-08, 1, -0.0804078, -0.774495, -0.175491)
+
+[node name="Monster" parent="." instance=ExtResource("2_adbs2")]
+transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, -0.5, -0.474, 0)
