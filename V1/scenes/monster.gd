@@ -1,28 +1,49 @@
 extends CharacterBody3D
-
-var speed = 1.0
+var animationPlayer : AnimationPlayer
+var speed = 0.6
 var direction = Vector3()
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var chaseDistance = 3.0
+@onready var player = $"../level_V2/CharacterBody3D"
 
 func _ready():
+	animationPlayer = $AnimationPlayer
 	randomize_direction()
+	print(player)
 
 func _physics_process(delta):
 	# Add the gravity.
+	if animationPlayer.is_playing():
+		pass
+	else:
+		animationPlayer.play("walk")
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
 	# Handle movement.
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
-
+	
 	# Rotate the character to face the movement direction.
 	if direction.length_squared() > 0.001:  # Only rotate if there's a significant direction change.
-		var target_rotation = direction.angle_to(Vector3.FORWARD)  # Calculate angle to face direction.
-		rotation.y = target_rotation  # Set the character's y rotation.
+		var target_rotation = atan2(direction.x, direction.z)
+		rotation.y = target_rotation
 
-	if is_on_wall():
-		randomize_direction()
+
+	if player:
+		var playerPosition = player.global_transform.origin
+		var distanceToPlayer = global_transform.origin.distance_to(playerPosition)
+
+		# Check if player is within chase distance
+		if distanceToPlayer < chaseDistance:
+			# Set direction towards player
+			direction = (playerPosition - global_transform.origin).normalized()
+		else:
+			# Randomly roam
+			if is_on_wall():
+				randomize_direction()
+	
+	
 	
 	move_and_slide()
 
