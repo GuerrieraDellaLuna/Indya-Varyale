@@ -4,7 +4,8 @@ var speed = 0.6
 var direction = Vector3()
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var chaseDistance = 3.0
-@onready var player = $"../level_V2/CharacterBody3D"
+@onready var player = $"../CharacterBody3D"
+
 
 func _ready():
 	animationPlayer = $AnimationPlayer

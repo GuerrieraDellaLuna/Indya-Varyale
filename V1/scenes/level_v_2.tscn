@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dj2r7r1r1wfwx"]
+[gd_scene load_steps=16 format=3 uid="uid://dj2r7r1r1wfwx"]
 
 [ext_resource type="PackedScene" path="res://scenes/room.tscn" id="1_031q6"]
 [ext_resource type="PackedScene" path="res://scenes/room_2.tscn" id="2_lqqy7"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://scenes/room_8.tscn" id="8_p6br4"]
 [ext_resource type="PackedScene" path="res://scenes/room_9.tscn" id="9_bon01"]
 [ext_resource type="PackedScene" uid="uid://d1bdugo1ffpp0" path="res://scenes/player.tscn" id="10_en32l"]
+[ext_resource type="Script" path="res://scenes/monster_spawner.gd" id="11_1ng8q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7g2v"]
 
@@ -95,3 +96,8 @@ transform = Transform3D(1.09959, 0, 0, 0, 1, 0, 0, 0, 1.86752, 1.59864, 0, -1.13
 [node name="CharacterBody3D" parent="." instance=ExtResource("10_en32l")]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -1.55947, 0.025, 0.672046)
 metadata/_edit_lock_ = true
+
+[node name="monster_spawner" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65095, 0.710378, -2.57344)
+visible = false
+script = ExtResource("11_1ng8q")
