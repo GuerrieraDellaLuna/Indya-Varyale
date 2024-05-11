@@ -1,10 +1,10 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
-const ROTATION_SPEED = 12.0
-const MOUSE_SENSITIVITY = 0.0015
+const ROTATION_SPEED = 10.0
+const MOUSE_SENSITIVITY = 0.0010
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -27,7 +27,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	direction = direction.rotated(Vector3.UP, spring_arm.rotation.x)
+	direction = direction.rotated(Vector3.UP, spring_arm.rotation.y)
 	# Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP,spring_arm.rotation.x)
 	# (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -41,6 +41,9 @@ func _physics_process(delta):
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		spring_arm.rotation.x -= event.relative.y * MOUSE_SENSITIVITY
-		spring_arm.rotation_degrees.x = clamp(spring_arm.rotation_degrees.x, -90.0, 30.0)
+		# spring_arm.rotation.x -= event.relative.y * MOUSE_SENSITIVITY
+		spring_arm.rotation_degrees.x = clamp(spring_arm.rotation_degrees.x, -90.0, 00.0)
 		spring_arm.rotation.y -= event.relative.x * MOUSE_SENSITIVITY
+
+
+

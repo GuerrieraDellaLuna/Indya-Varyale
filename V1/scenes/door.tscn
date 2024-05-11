@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch66gbgcgbkad"]
+[gd_scene load_steps=4 format=3 uid="uid://ch66gbgcgbkad"]
 
+[ext_resource type="Script" path="res://scenes/door.gd" id="1_mpixn"]
 [ext_resource type="Material" uid="uid://byyhlpebeir0q" path="res://materials/door.material" id="1_xlmcg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ogcj3"]
@@ -7,6 +8,7 @@ material = ExtResource("1_xlmcg")
 size = Vector3(0.1, 5, 3.5)
 
 [node name="Door" type="Node3D"]
+script = ExtResource("1_mpixn")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

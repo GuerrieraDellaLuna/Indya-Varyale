@@ -95,3 +95,6 @@ transform = Transform3D(-4.9817e-09, 0, 0.331186, 0, 0.200099, 0, -0.113968, 0, 
 
 [node name="Door4" parent="." instance=ExtResource("1_cegkm")]
 transform = Transform3D(-4.9817e-09, 0, 0.331186, 0, 0.200099, 0, -0.113968, 0, -1.44766e-08, 1.49147, 0.526619, -0.645739)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.554822, 0, 0, 0, 1, 0, 0, 0, 0.639992, 0, 1.87505, 0.915667)

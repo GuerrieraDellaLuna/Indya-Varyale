@@ -4,21 +4,20 @@
 [ext_resource type="PackedScene" uid="uid://dq8lv7s0pd7ai" path="res://test_character.glb" id="2_nhmml"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_336gw"]
+height = 2.15865
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
-transform = Transform3D(-4.37114e-08, 0.999999, 0, -1, -4.37113e-08, 0, 0, 0, 1, -0.0325307, 0.0259087, 0.0459475)
+[node name="player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_kchju")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-0.00597169, -0.297386, 0.0390608, 0.299912, -0.00645589, -0.00330019, 0.00411202, 0.0389837, 0.297428, -0.19339, 0.0143224, 0.0253999)
+transform = Transform3D(0.276, 0, 0, 0, 0.29, 0, 0, 0, 0.276, -0.05, 0.32, 0)
 shape = SubResource("CapsuleShape3D_336gw")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(-0.035551, -0.96947, -0.242629, -0.993523, 0.00806174, 0.113363, -0.107946, 0.245088, -0.963475, -0.326821, 0.0242042, 0.0429247)
-margin = 0.1
+transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 8.74228e-08, 1, 8.74228e-08, 1, -8.74228e-08, 4.37114e-08, 0, 0.45, 0)
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
-transform = Transform3D(1, -2.98023e-08, 2.38419e-07, 1.62981e-09, 1, 1.546e-07, -1.49012e-08, 1.86265e-09, 1, 0, 0, 0)
 
 [node name="test_character" parent="." instance=ExtResource("2_nhmml")]
-transform = Transform3D(0.0433312, -0.994697, -0.0932928, -0.162959, 0.0850929, -0.982958, 0.985683, 0.0577955, -0.158407, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)

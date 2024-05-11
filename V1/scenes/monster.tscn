@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://duh6ppu233enu"]
 
 [ext_resource type="PackedScene" uid="uid://b1y2uhml2gso1" path="res://assets/ImageToStl.com_monster.gltf" id="1_qdrkv"]
-[ext_resource type="Script" path="res://scenes/monster.gd" id="1_rvbts"]
+[ext_resource type="Script" path="res://scenes/CharacterBody3D.gd" id="1_rvbts"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_17cgs"]
 animations = [{

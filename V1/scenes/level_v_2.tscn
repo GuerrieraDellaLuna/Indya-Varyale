@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ske57ek6uenu"]
+[gd_scene load_steps=18 format=3 uid="uid://ske57ek6uenu"]
 
 [ext_resource type="PackedScene" uid="uid://c3dsyar533l1g" path="res://scenes/room.tscn" id="1_031q6"]
 [ext_resource type="PackedScene" uid="uid://b1qkdjowfalom" path="res://scenes/room_2.tscn" id="2_lqqy7"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://chsfvms1qb108" path="res://scenes/room_7.tscn" id="7_1iiqc"]
 [ext_resource type="PackedScene" uid="uid://0vmgfkmjhu32" path="res://scenes/room_8.tscn" id="8_p6br4"]
 [ext_resource type="PackedScene" uid="uid://bu5k0bfd3tk0b" path="res://scenes/room_9.tscn" id="9_bon01"]
+[ext_resource type="PackedScene" uid="uid://dx6g0cq42d76v" path="res://scenes/player.tscn" id="11_6fi6w"]
+[ext_resource type="PackedScene" uid="uid://bq1liqrw8kq0h" path="res://Door/door_model.tscn" id="11_ga3u7"]
+[ext_resource type="Script" path="res://scenes/portal.gd" id="12_2dhv0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7g2v"]
 
@@ -17,6 +20,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_8xj7w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_df7nd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p0ytt"]
 
 [node name="level_V2" type="Node3D"]
 
@@ -90,3 +95,18 @@ transform = Transform3D(1.09959, 0, 0, 0, 1, 0, 0, 0, 1.86752, 1.59864, 0, -1.13
 [node name="Room8" parent="." instance=ExtResource("8_p6br4")]
 
 [node name="Room9" parent="." instance=ExtResource("9_bon01")]
+
+[node name="DoorModel" parent="." instance=ExtResource("11_ga3u7")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -0.0442908, 0, -0.254461)
+
+[node name="playableCharacter" parent="." groups=["player"] instance=ExtResource("11_6fi6w")]
+transform = Transform3D(0.993979, 0, 0.109578, 0, 0.999999, 0, -0.109578, 0, 0.993979, -2.07344, 0, -0.90438)
+
+[node name="Portal" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.407954, 0, -0.243627)
+script = ExtResource("12_2dhv0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal"]
+shape = SubResource("CylinderShape3D_p0ytt")
+
+[connection signal="body_entered" from="Portal" to="DoorModel" method="_on_portal_body_entered"]
