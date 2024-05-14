@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx6g0cq42d76v"]
+[gd_scene load_steps=5 format=3 uid="uid://dx6g0cq42d76v"]
 
 [ext_resource type="Script" path="res://scenes/Player.gd" id="1_kchju"]
 [ext_resource type="PackedScene" uid="uid://dq8lv7s0pd7ai" path="res://test_character.glb" id="2_nhmml"]
+[ext_resource type="Script" path="res://scenes/RayCast3D.gd" id="2_w11ss"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_336gw"]
 height = 2.15865
@@ -19,5 +20,27 @@ transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 8.74228e-08, 1, 8.74228e-0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 
+[node name="RayCast3D" type="RayCast3D" parent="SpringArm3D"]
+transform = Transform3D(-1.16533e-08, -3.28087e-09, 0.276, -0.0714341, 0.280118, 0, -0.266596, -0.0750575, -1.20643e-08, 0, 0, 0)
+target_position = Vector3(10, 0, 0)
+script = ExtResource("2_w11ss")
+
+[node name="Label" type="Label" parent="SpringArm3D/RayCast3D"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -24.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Message
+[Key]"
+horizontal_alignment = 1
+
 [node name="test_character" parent="." instance=ExtResource("2_nhmml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

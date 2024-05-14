@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ske57ek6uenu"]
+[gd_scene load_steps=16 format=3 uid="uid://ske57ek6uenu"]
 
 [ext_resource type="PackedScene" uid="uid://c3dsyar533l1g" path="res://scenes/room.tscn" id="1_031q6"]
 [ext_resource type="PackedScene" uid="uid://b1qkdjowfalom" path="res://scenes/room_2.tscn" id="2_lqqy7"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://0vmgfkmjhu32" path="res://scenes/room_8.tscn" id="8_p6br4"]
 [ext_resource type="PackedScene" uid="uid://bu5k0bfd3tk0b" path="res://scenes/room_9.tscn" id="9_bon01"]
 [ext_resource type="PackedScene" uid="uid://dx6g0cq42d76v" path="res://scenes/player.tscn" id="10_en32l"]
+[ext_resource type="PackedScene" uid="uid://ccqhkv3qbs5g1" path="res://scenes/collectible.tscn" id="11_nqfh6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7g2v"]
 
@@ -95,3 +96,6 @@ transform = Transform3D(1.09959, 0, 0, 0, 1, 0, 0, 0, 1.86752, 1.59864, 0, -1.13
 [node name="CharacterBody3D" parent="." instance=ExtResource("10_en32l")]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -1.55947, 0.025, 0.672046)
 metadata/_edit_lock_ = true
+
+[node name="Collectible" parent="." instance=ExtResource("11_nqfh6")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.763466, 0.108671, 0.443984)
