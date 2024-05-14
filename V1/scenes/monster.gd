@@ -4,6 +4,7 @@ var speed = 0.6
 var direction = Vector3()
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var chaseDistance = 3.0
+var hitDistance = 0.3
 @onready var player = $"../CharacterBody3D"
 
 
@@ -30,11 +31,13 @@ func _physics_process(delta):
 		var target_rotation = atan2(direction.x, direction.z)
 		rotation.y = target_rotation
 
-
 	if player:
 		var playerPosition = player.global_transform.origin
 		var distanceToPlayer = global_transform.origin.distance_to(playerPosition)
-
+		if distanceToPlayer < hitDistance:
+			animationPlayer.stop()
+		else:
+			animationPlayer.play("walk")
 		# Check if player is within chase distance
 		if distanceToPlayer < chaseDistance:
 			# Set direction towards player
@@ -43,9 +46,7 @@ func _physics_process(delta):
 			# Randomly roam
 			if is_on_wall():
 				randomize_direction()
-	
-	
-	
+
 	move_and_slide()
 
 func randomize_direction():
