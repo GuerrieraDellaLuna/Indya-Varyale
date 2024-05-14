@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dllo3od5a6l7y"]
 
-[ext_resource type="PackedScene" uid="uid://dj2r7r1r1wfwx" path="res://scenes/level_v_2.tscn" id="1_h0xi1"]
+[ext_resource type="PackedScene" path="res://scenes/level_v_2.tscn" id="1_h0xi1"]
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54347e-05, 0, 0.0011059)

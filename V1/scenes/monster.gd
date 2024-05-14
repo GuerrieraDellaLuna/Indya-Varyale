@@ -1,9 +1,9 @@
 extends CharacterBody3D
 var animationPlayer : AnimationPlayer
-var speed = 0.6
+var speed = 0.5
 var direction = Vector3()
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var chaseDistance = 3.0
+var chaseDistance = 2.0
 var hitDistance = 0.3
 @onready var player = $"../CharacterBody3D"
 
