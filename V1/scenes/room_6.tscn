@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://hta3k3n5qsop"]
+
+[ext_resource type="PackedScene" uid="uid://ch66gbgcgbkad" path="res://scenes/door.tscn" id="1_cegkm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_s08gc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ctuw8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1hu8t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bnfb7"]
+
+[node name="Room6" type="Node3D"]
+transform = Transform3D(1.80238, 0, 0, 0, 1, 0, 0, 0, 1.56252, 0.499504, 0, 5.15847)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 0.05, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_s08gc")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_ctuw8")
+
+[node name="Wall1" type="StaticBody3D" parent="."]
+transform = Transform3D(0.022, 0, 0, 0, 1, 0, 0, 0, 1.93424, -1.48836, 0.544018, 0.52309)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0150833, 0)
+mesh = SubResource("BoxMesh_1hu8t")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Wall1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.327309, 0, -0.0150833, -0.871876)
+mesh = SubResource("BoxMesh_1hu8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1"]
+shape = SubResource("BoxShape3D_bnfb7")
+
+[node name="Wall2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.022, 0, 0, 0, 1, 0, 0, 0, 1.95193, 1.49556, 0.544018, 0.512994)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0150833, 0)
+mesh = SubResource("BoxMesh_1hu8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2"]
+shape = SubResource("BoxShape3D_bnfb7")
+
+[node name="Wall5" type="StaticBody3D" parent="."]
+transform = Transform3D(0.022, 0, 0, 0, 1, 0, 0, 0, 0.625301, 1.49556, 0.544018, -1.16268)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0150833, 0)
+mesh = SubResource("BoxMesh_1hu8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall5"]
+shape = SubResource("BoxShape3D_bnfb7")
+
+[node name="Wall3" type="StaticBody3D" parent="."]
+transform = Transform3D(-9.61651e-10, 0, 3, 0, 1, 0, -0.022, 0, -1.31134e-07, 0.00782609, 0.544018, 1.4913)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0150833, 0)
+mesh = SubResource("BoxMesh_1hu8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3"]
+shape = SubResource("BoxShape3D_bnfb7")
+
+[node name="Wall4" type="StaticBody3D" parent="."]
+transform = Transform3D(-9.61651e-10, 0, 1.09189, 0, 1, 0, -0.022, 0, -4.77277e-08, 0.950534, 0.544018, -1.48268)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1, 0, -4.54747e-13, 0, 1, 0, -2.77556e-17, 0, 1, 0, -0.0150833, 0)
+mesh = SubResource("BoxMesh_1hu8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4"]
+shape = SubResource("BoxShape3D_bnfb7")
+
+[node name="Wall6" type="StaticBody3D" parent="."]
+transform = Transform3D(-9.61651e-10, 0, 1.498, 0, 1, 0, -0.022, 0, -6.54794e-08, -0.755166, 0.544018, -1.48268)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall6"]
+transform = Transform3D(1, 0, -4.54747e-13, 0, 1, 0, -2.77556e-17, 0, 1, 0, -0.0150833, 0)
+mesh = SubResource("BoxMesh_1hu8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall6"]
+shape = SubResource("BoxShape3D_bnfb7")
+
+[node name="Door2" parent="." instance=ExtResource("1_cegkm")]
+transform = Transform3D(0.113968, 0, 0, 0, 0.200099, 0, 0, 0, 0.331186, 0.207, 0.526619, -1.48772)
+
+[node name="Door3" parent="." instance=ExtResource("1_cegkm")]
+transform = Transform3D(-4.9817e-09, 0, 0.331186, 0, 0.200099, 0, -0.113968, 0, -1.44766e-08, -1.48778, 0.526619, -0.645739)
+
+[node name="Door4" parent="." instance=ExtResource("1_cegkm")]
+transform = Transform3D(-4.9817e-09, 0, 0.331186, 0, 0.200099, 0, -0.113968, 0, -1.44766e-08, 1.49147, 0.526619, -0.645739)

@@ -6,7 +6,7 @@
 material = ExtResource("1_xlmcg")
 size = Vector3(0.1, 5, 3.5)
 
-[node name="DoorLeft" type="Node3D"]
+[node name="Door" type="Node3D"]
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

@@ -1,7 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://bejgwfewj80bw"]
+[gd_scene load_steps=12 format=3 uid="uid://bejgwfewj80bw"]
 
-[ext_resource type="PackedScene" uid="uid://ch66gbgcgbkad" path="res://door.tscn" id="1_nh5iv"]
-[ext_resource type="PackedScene" uid="uid://duh6ppu233enu" path="res://monster.tscn" id="2_yh7kj"]
+[ext_resource type="PackedScene" uid="uid://ch66gbgcgbkad" path="res://scenes/door.tscn" id="1_nh5iv"]
+[ext_resource type="PackedScene" uid="uid://duh6ppu233enu" path="res://scenes/monster.tscn" id="2_yh7kj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i881j"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 2.3
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_g60kp"]
+sky_material = SubResource("ProceduralSkyMaterial_i881j")
+
+[sub_resource type="Environment" id="Environment_v160q"]
+background_mode = 2
+sky = SubResource("Sky_g60kp")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_753m1"]
 size = Vector2(30, 50)
@@ -22,6 +36,13 @@ size = Vector2(100, 8)
 size = Vector2(8, 30)
 
 [node name="School" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v160q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.5, 0)
+shadow_enabled = true
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3453, 0, -0.127007)
@@ -70,6 +91,22 @@ transform = Transform3D(-0.00100068, 0, -0.02498, 0, 0.025, 0, 0.02498, 0, -0.00
 
 [node name="Hallway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.6745, 0, 0)
+mesh = SubResource("PlaneMesh_y683i")
+
+[node name="Hallway2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -27.8961, 0, 54.0301)
+mesh = SubResource("PlaneMesh_y683i")
+
+[node name="Hallway3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -61.8276, 0, 54.0314)
+mesh = SubResource("PlaneMesh_y683i")
+
+[node name="Hallway5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -43.9737, 0, -53.9832)
+mesh = SubResource("PlaneMesh_y683i")
+
+[node name="Hallway4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -61.8276, 0, -53.8965)
 mesh = SubResource("PlaneMesh_y683i")
 
 [node name="Classroom" type="Node3D" parent="."]
