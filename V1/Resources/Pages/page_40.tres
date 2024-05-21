@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Page" load_steps=2 format=3 uid="uid://dh2jw2xj8vidw"]
+
+[ext_resource type="Script" path="res://Resources/Pages/Page.gd" id="1_r2sxx"]
+
+[resource]
+script = ExtResource("1_r2sxx")
+page_number = 40
+page_title = "Pendant"
+page_description = "An old trinket from our childhood. We gifted eachother the same pendant by chance, many christmas ago. It has been a token of our friendship since then."

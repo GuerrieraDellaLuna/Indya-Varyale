@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://k87prudfwldo"]
+
+[ext_resource type="Script" path="res://Resources/Items/Item.gd" id="1_f6i84"]
+
+[resource]
+script = ExtResource("1_f6i84")
+item_identifier = "pendant"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Page" load_steps=2 format=3 uid="uid://coofwa724y177"]
+
+[ext_resource type="Script" path="res://Resources/Pages/Page.gd" id="1_lxli5"]
+
+[resource]
+script = ExtResource("1_lxli5")
+page_number = 3
+page_title = "Page 3 Title"
+page_description = "description page 3"
