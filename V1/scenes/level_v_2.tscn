@@ -98,4 +98,4 @@ transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -1.55947, 0.025, 0.672
 metadata/_edit_lock_ = true
 
 [node name="Collectible" parent="." instance=ExtResource("11_nqfh6")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.763466, 0.108671, 0.443984)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.763466, 0.00699043, 0.443984)
