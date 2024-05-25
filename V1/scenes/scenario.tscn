@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://drnys0gd6y2ug"]
+[gd_scene load_steps=13 format=3 uid="uid://drnys0gd6y2ug"]
 
 [ext_resource type="Texture2D" uid="uid://b81j2hpdqq228" path="res://assets/cenario_floor_walls.png" id="1_4hew1"]
 [ext_resource type="PackedScene" uid="uid://bq1liqrw8kq0h" path="res://Door/door_model.tscn" id="2_xybls"]
+[ext_resource type="Script" path="res://scenes/portal.gd" id="3_kaj3d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0ead"]
 resource_name = "Material.002"
@@ -86,6 +87,8 @@ size = Vector3(1, 0.005, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_te4kp"]
 size = Vector3(1, 1.34766, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_boxxo"]
 
 [node name="scenario" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0974, 0, -65.4327)
@@ -365,3 +368,12 @@ transform = Transform3D(-4.22244e-08, 0, 0.85, 0, 0.823914, 0, -0.965981, 0, -3.
 
 [node name="Door_10" parent="." instance=ExtResource("2_xybls")]
 transform = Transform3D(-4.22244e-08, 0, 0.85, 0, 0.823914, 0, -0.965981, 0, -3.71547e-08, -69.0282, 0, 109.686)
+
+[node name="Portal" type="Area3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -56.8232, 3.72093, 78.2207)
+script = ExtResource("3_kaj3d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal"]
+shape = SubResource("CylinderShape3D_boxxo")
+
+[connection signal="body_entered" from="Portal" to="Door_1" method="_on_portal_body_entered"]

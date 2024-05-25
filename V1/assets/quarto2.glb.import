@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bnuab4qhn5smd"
-path="res://.godot/imported/fd1521cpzffq.gltf-09c4f374d12fb7b8a6bbda60aaea0783.scn"
+uid="uid://u2ngnii1dc0"
+path="res://.godot/imported/quarto2.glb-8c1784e143a3f4d5bbd4980759417098.scn"
 
 [deps]
 
-source_file="res://fd1521cpzffq.gltf"
-dest_files=["res://.godot/imported/fd1521cpzffq.gltf-09c4f374d12fb7b8a6bbda60aaea0783.scn"]
+source_file="res://assets/quarto2.glb"
+dest_files=["res://.godot/imported/quarto2.glb-8c1784e143a3f4d5bbd4980759417098.scn"]
 
 [params]
 
