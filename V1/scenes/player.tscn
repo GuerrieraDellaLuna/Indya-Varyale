@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx6g0cq42d76v"]
+[gd_scene load_steps=6 format=3 uid="uid://dx6g0cq42d76v"]
 
 [ext_resource type="Script" path="res://scenes/Player.gd" id="1_kchju"]
 [ext_resource type="PackedScene" uid="uid://dq8lv7s0pd7ai" path="res://test_character.glb" id="2_nhmml"]
@@ -6,6 +6,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_336gw"]
 height = 2.15865
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_figfa"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0)
@@ -44,3 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.309368, 0, 0, 0, 0.0918967, 0, 0, 0, 0.481997, -0.0322804, 0.322443, 0.010122)
+shape = SubResource("CapsuleShape3D_figfa")

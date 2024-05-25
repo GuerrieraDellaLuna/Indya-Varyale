@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://drnys0gd6y2ug"]
+[gd_scene load_steps=11 format=3 uid="uid://drnys0gd6y2ug"]
 
 [ext_resource type="Texture2D" uid="uid://b81j2hpdqq228" path="res://assets/cenario_floor_walls.png" id="1_4hew1"]
+[ext_resource type="PackedScene" uid="uid://bq1liqrw8kq0h" path="res://Door/door_model.tscn" id="2_xybls"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0ead"]
 resource_name = "Material.002"
@@ -334,3 +335,33 @@ shape = SubResource("BoxShape3D_te4kp")
 transform = Transform3D(0.567491, 0, 0, 0, 2.62784, 0, 0, 0, 8.54923, -69.106, 2.28895, 114.912)
 visible = false
 shape = SubResource("BoxShape3D_te4kp")
+
+[node name="Door_1" parent="." instance=ExtResource("2_xybls")]
+transform = Transform3D(0.965981, 0, 0, 0, 0.823914, 0, 0, 0, 0.85, -56.7798, 0, 79.9253)
+
+[node name="Door_2" parent="." instance=ExtResource("2_xybls")]
+transform = Transform3D(0.965981, 0, 0, 0, 0.823914, 0, 0, 0, 0.85, -44.3933, 0, 109.104)
+
+[node name="Door_3" parent="." instance=ExtResource("2_xybls")]
+transform = Transform3D(0.965981, 0, 0, 0, 0.823914, 0, 0, 0, 0.85, -9.36663, 0, 89.5921)
+
+[node name="Door_4" parent="." instance=ExtResource("2_xybls")]
+transform = Transform3D(-4.22244e-08, 0, 0.85, 0, 0.823914, 0, -0.965981, 0, -3.71547e-08, -13.3977, 0, 66.5835)
+
+[node name="Door_5" parent="." instance=ExtResource("2_xybls")]
+transform = Transform3D(-4.22244e-08, 0, 0.85, 0, 0.823914, 0, -0.965981, 0, -3.71547e-08, -19.1484, 0, 30.5)
+
+[node name="Door_6" parent="." instance=ExtResource("2_xybls")]
+transform = Transform3D(0.965981, 0, 0, 0, 0.823914, 0, 0, 0, 0.85, -37.8719, 0, 33.5836)
+
+[node name="Door_7" parent="." instance=ExtResource("2_xybls")]
+transform = Transform3D(0.965981, 0, 0, 0, 0.823914, 0, 0, 0, 0.85, -89.7487, 0, 50.9724)
+
+[node name="Door_8" parent="." instance=ExtResource("2_xybls")]
+transform = Transform3D(-4.22244e-08, 0, 0.85, 0, 0.823914, 0, -0.965981, 0, -3.71547e-08, -78.05, 0, 77.3013)
+
+[node name="Door_9" parent="." instance=ExtResource("2_xybls")]
+transform = Transform3D(-4.22244e-08, 0, 0.85, 0, 0.823914, 0, -0.965981, 0, -3.71547e-08, -56.4162, 0, 38.2725)
+
+[node name="Door_10" parent="." instance=ExtResource("2_xybls")]
+transform = Transform3D(-4.22244e-08, 0, 0.85, 0, 0.823914, 0, -0.965981, 0, -3.71547e-08, -69.0282, 0, 109.686)

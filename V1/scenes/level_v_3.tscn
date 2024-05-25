@@ -8,10 +8,10 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0.272353, 3.98624, -9.65802)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, -7.33922, 7.13026, 4.41469)
 shadow_enabled = true
 
-[node name="player" parent="." instance=ExtResource("2_fr75u")]
+[node name="player" parent="." groups=["player"] instance=ExtResource("2_fr75u")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -17.08, 0.492511, 2.95841)
 
 [node name="scenario" parent="." instance=ExtResource("2_qe48i")]

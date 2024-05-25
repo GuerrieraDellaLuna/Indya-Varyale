@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ske57ek6uenu"]
+[gd_scene load_steps=18 format=3 uid="uid://ske57ek6uenu"]
 
 [ext_resource type="PackedScene" uid="uid://c3dsyar533l1g" path="res://scenes/room.tscn" id="1_031q6"]
 [ext_resource type="PackedScene" uid="uid://b1qkdjowfalom" path="res://scenes/room_2.tscn" id="2_lqqy7"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dx6g0cq42d76v" path="res://scenes/player.tscn" id="11_6fi6w"]
 [ext_resource type="PackedScene" uid="uid://bq1liqrw8kq0h" path="res://Door/door_model.tscn" id="11_ga3u7"]
 [ext_resource type="Script" path="res://scenes/portal.gd" id="12_2dhv0"]
-[ext_resource type="PackedScene" uid="uid://drnys0gd6y2ug" path="res://scenes/scenario.tscn" id="13_g6l5p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7g2v"]
 
@@ -109,7 +108,5 @@ script = ExtResource("12_2dhv0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Portal"]
 shape = SubResource("CylinderShape3D_p0ytt")
-
-[node name="cenario" parent="." instance=ExtResource("13_g6l5p")]
 
 [connection signal="body_entered" from="Portal" to="DoorModel" method="_on_portal_body_entered"]
