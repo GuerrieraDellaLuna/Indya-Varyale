@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6kox24q10brx"]
+
+[ext_resource type="PackedScene" uid="uid://dx6g0cq42d76v" path="res://scenes/player.tscn" id="2_fr75u"]
+[ext_resource type="PackedScene" uid="uid://drnys0gd6y2ug" path="res://scenes/scenario.tscn" id="2_qe48i"]
+
+[node name="Level_V3" type="Node3D"]
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0.272353, 3.98624, -9.65802)
+shadow_enabled = true
+
+[node name="player" parent="." instance=ExtResource("2_fr75u")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -17.08, 0.492511, 2.95841)
+
+[node name="scenario" parent="." instance=ExtResource("2_qe48i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5456, 0, -65.4663)
