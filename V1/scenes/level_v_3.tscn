@@ -28,3 +28,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -1.73253, 0)
 
 [node name="StaticBody3D" parent="." instance=ExtResource("5_kkdm1")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -13.8375, 0.626637, 0)
+
+[node name="Monster2" parent="." instance=ExtResource("3_wrdwm")]
+transform = Transform3D(-2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, 30.5302, 0.450041, 19.5323)
+
+[node name="Monster3" parent="." instance=ExtResource("3_wrdwm")]
+transform = Transform3D(-2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, 36.0551, 0.450041, -11.4883)
+
+[node name="Monster4" parent="." instance=ExtResource("3_wrdwm")]
+transform = Transform3D(-2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, 0, 0.450041, 48.6168)
+
+[node name="Monster5" parent="." instance=ExtResource("3_wrdwm")]
+transform = Transform3D(-2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, -51.824, 0.450041, 28.6042)
