@@ -1,27 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6kox24q10brx"]
+[gd_scene load_steps=10 format=3 uid="uid://b6kox24q10brx"]
 
+[ext_resource type="Script" path="res://scenes/level_v_3.gd" id="1_2btmd"]
 [ext_resource type="PackedScene" uid="uid://dx6g0cq42d76v" path="res://scenes/player.tscn" id="2_fr75u"]
 [ext_resource type="PackedScene" uid="uid://drnys0gd6y2ug" path="res://scenes/scenario.tscn" id="2_qe48i"]
 [ext_resource type="PackedScene" uid="uid://bmt5e3uy7fwue" path="res://scenes/monster.tscn" id="3_wrdwm"]
 [ext_resource type="PackedScene" uid="uid://eegpf7tycsqx" path="res://scenes/page.tscn" id="4_i3tmg"]
 [ext_resource type="PackedScene" uid="uid://cpr084rbreixq" path="res://scenes/collectible.tscn" id="5_kkdm1"]
+[ext_resource type="PackedScene" uid="uid://dae4pfnvalnq5" path="res://Entities/Triggers/scene_trigger_holder.tscn" id="6_dtk1o"]
+[ext_resource type="PackedScene" uid="uid://b4g8j6bgtvglv" path="res://Entities/Triggers/scene_trigger.tscn" id="7_gfwyl"]
+[ext_resource type="PackedScene" uid="uid://higaat2iqa6q" path="res://SceneSwitcher.tscn" id="8_lnig5"]
 
 [node name="Level_V3" type="Node3D"]
 top_level = true
-metadata/_edit_lock_ = true
+script = ExtResource("1_2btmd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, -7.33922, 7.13026, 4.41469)
 shadow_enabled = true
 
-[node name="player" parent="." groups=["player"] instance=ExtResource("2_fr75u")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -17.08, 0.492511, 18.0392)
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_fr75u")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
 [node name="scenario" parent="." instance=ExtResource("2_qe48i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5456, 0, -65.4663)
 
 [node name="Monster" parent="." instance=ExtResource("3_wrdwm")]
-transform = Transform3D(-2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, 0, 0.450041, 0)
+transform = Transform3D(-1.74846e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.74846e-09, 0, 0.450041, 0)
 
 [node name="page" parent="." instance=ExtResource("4_i3tmg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -1.73253, 0)
@@ -30,13 +34,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -1.73253, 0)
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -13.8375, 0.626637, 0)
 
 [node name="Monster2" parent="." instance=ExtResource("3_wrdwm")]
-transform = Transform3D(-2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, 30.5302, 0.450041, 19.5323)
+transform = Transform3D(-1.74846e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.74846e-09, 30.5302, 0.450041, 19.5323)
 
 [node name="Monster3" parent="." instance=ExtResource("3_wrdwm")]
-transform = Transform3D(-2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, 36.0551, 0.450041, -11.4883)
+transform = Transform3D(-1.74846e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.74846e-09, 36.0551, 0.450041, -11.4883)
 
 [node name="Monster4" parent="." instance=ExtResource("3_wrdwm")]
-transform = Transform3D(-2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, 0, 0.450041, 48.6168)
+transform = Transform3D(-1.74846e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.74846e-09, 0, 0.450041, 48.6168)
 
 [node name="Monster5" parent="." instance=ExtResource("3_wrdwm")]
-transform = Transform3D(-2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, -51.824, 0.450041, 28.6042)
+transform = Transform3D(-1.74846e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.74846e-09, -51.824, 0.450041, 28.6042)
+
+[node name="SceneTriggerHolder" parent="." instance=ExtResource("6_dtk1o")]
+transform = Transform3D(1, 0, 0, 0, 5.04616, 0, 0, 0, 3.24999, 27.126, 3.0043, 1.11533)
+
+[node name="SceneTrigger" parent="SceneTriggerHolder" instance=ExtResource("7_gfwyl")]
+path = "res://scenes/locker_room.tscn"
+visibleTrigger = true
+
+[node name="SceneSwitcher" parent="." instance=ExtResource("8_lnig5")]

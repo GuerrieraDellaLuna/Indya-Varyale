@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctv1au50pyv73"]
+[gd_scene load_steps=10 format=3 uid="uid://ctv1au50pyv73"]
 
 [ext_resource type="Texture2D" uid="uid://diaaqx8ysaj2y" path="res://assets/quarto1_floor_walls.png" id="1_budrs"]
+[ext_resource type="Script" path="res://scenes/locker_room.gd" id="1_djclk"]
 [ext_resource type="PackedScene" uid="uid://dpuamyyengo5l" path="res://assets/locker.glb" id="2_80war"]
 [ext_resource type="PackedScene" uid="uid://bcweybiu4ioyh" path="res://assets/page.glb" id="3_ne7u3"]
-[ext_resource type="PackedScene" uid="uid://dx6g0cq42d76v" path="res://scenes/player.tscn" id="4_32iff"]
-[ext_resource type="PackedScene" uid="uid://yu28dwtdgpfa" path="res://spawn_point.tscn" id="4_xumdv"]
-[ext_resource type="Script" path="res://scenes/portal.gd" id="6_br74b"]
+[ext_resource type="PackedScene" uid="uid://d3dcobnplnp6o" path="res://portal.tscn" id="9_umdii"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fat5k"]
 resource_name = "Material.012"
@@ -49,9 +48,9 @@ shadow_mesh = SubResource("ArrayMesh_dn44u")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lr275"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ktf0x"]
-
 [node name="locker_room" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.64051, 3.54, 74.8251)
+script = ExtResource("1_djclk")
 
 [node name="Classroom" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5668, 3.97179, -71.9439)
@@ -78,16 +77,12 @@ transform = Transform3D(23.68, 0, 0, 0, 0.3, 0, 0, 0, 23.562, -10.0668, 0.471788
 visible = false
 shape = SubResource("BoxShape3D_lr275")
 
-[node name="SpawnPoint" parent="." instance=ExtResource("4_xumdv")]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.718454, 0.695574, 0, -0.695574, 0.718454, -9.58819, 6.41652, -83.462)
+visible = false
 
-[node name="Portal" type="Area3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -10.5599, 3.72093, -82.2908)
-script = ExtResource("6_br74b")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal"]
-shape = SubResource("CylinderShape3D_ktf0x")
-
-[node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("4_32iff")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -10.0929, 0.789811, -71.9332)
+[node name="Portal" parent="." instance=ExtResource("9_umdii")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -10.5, 3.5, -80.5)
+next_area = "res://scenes/level_v_3.tscn"
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]

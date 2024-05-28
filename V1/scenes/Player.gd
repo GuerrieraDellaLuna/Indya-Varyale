@@ -12,8 +12,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var spring_arm = $SpringArm3D
 @onready var model = $test_character
 
-
-
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -49,6 +47,8 @@ func _unhandled_input(event):
 		# spring_arm.rotation.x -= event.relative.y * MOUSE_SENSITIVITY
 		spring_arm.rotation_degrees.x = clamp(spring_arm.rotation_degrees.x, -90.0, 30.0)
 		spring_arm.rotation.y -= event.relative.x * MOUSE_SENSITIVITY
+
+
 
 
 

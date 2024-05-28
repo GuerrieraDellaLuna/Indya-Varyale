@@ -23,7 +23,3 @@ func _on_Area_body_exited(body):
 		$Label.hide()
 		$AnimationPlayer.play("DoorClose")
 
-func _on_portal_body_entered(body):
-	if body.is_in_group("player"):
-		get_tree().change_scene_to_file("res://scenes/locker_room.tscn")
-		queue_free()
