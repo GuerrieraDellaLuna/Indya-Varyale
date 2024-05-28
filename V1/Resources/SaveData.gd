@@ -6,15 +6,15 @@ extends Resource
 @export var inventory_enabled: bool = false;
 
 @export var inventory: InventoryData
-@export var book: BookData 
-
+@export var book: BookData
 
 func enable_inventory() -> void:
 	self.inventory_enabled = true;
 	return;
 
 static func create_new(save_name: String) -> SaveData:
-	var new_save = preload("res://Resources/SaveData.gd");
+	var new_save: SaveData = SaveData.new();
+	
 	new_save.save_name = save_name;
 	new_save.inventory_enabled = false;
 	new_save.inventory = InventoryData.create_new();
@@ -26,3 +26,8 @@ static func get_save_path(save_name: String) -> String:
 
 func save() -> void:
 	ResourceSaver.save(self, "user://saves/" + get_save_path(save_name) + ".tres", ResourceSaver.FLAG_NONE);
+
+func load(levelName: String) -> SaveData:
+	var path: String = get_save_path(levelName);
+	
+	return load(path) as SaveData;
