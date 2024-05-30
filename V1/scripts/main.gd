@@ -30,6 +30,11 @@ func _input(event):
 		if (book_open):
 			close_book();
 		# open pause menu when implemented
+	
+	if event.is_action_pressed("open test dialogue"):
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/stage1.dialogue"), "test")
+		return
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
