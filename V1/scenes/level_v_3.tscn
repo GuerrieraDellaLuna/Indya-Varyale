@@ -13,6 +13,7 @@ script = ExtResource("1_2btmd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, -7.33922, 7.13026, 4.41469)
+visible = false
 shadow_enabled = true
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_fr75u")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://drnys0gd6y2ug"]
+[gd_scene load_steps=13 format=3 uid="uid://drnys0gd6y2ug"]
 
 [ext_resource type="Texture2D" uid="uid://b81j2hpdqq228" path="res://assets/cenario_floor_walls.png" id="1_4hew1"]
 [ext_resource type="PackedScene" uid="uid://bq1liqrw8kq0h" path="res://Door/door_model.tscn" id="2_xybls"]
@@ -50,7 +50,7 @@ cull_mode = 2
 albedo_color = Color(0.300925, 0.303163, 0.274333, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rfv28"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0ndhl"]
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
 "format": 34896613377,
@@ -80,13 +80,29 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_rfv28")
+shadow_mesh = SubResource("ArrayMesh_0ndhl")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_38kd8"]
 size = Vector3(1, 0.005, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_te4kp"]
 size = Vector3(1, 1.34766, 1)
+
+[sub_resource type="Environment" id="Environment_t6mkd"]
+background_mode = 1
+background_color = Color(0.196078, 0.196078, 0.196078, 1)
+background_energy_multiplier = 0.05
+ambient_light_color = Color(0.356863, 0.372549, 0.458824, 1)
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.0784314, 0.109804, 0.133333, 1)
+fog_light_energy = 1.19
+fog_sun_scatter = 0.1
+fog_density = 0.02
+fog_sky_affect = 0.169
+adjustment_brightness = 0.5
+adjustment_contrast = 0.01
+adjustment_saturation = 0.5
 
 [node name="scenario" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0974, 0, -65.4327)
@@ -98,7 +114,7 @@ mesh = SubResource("ArrayMesh_5f8tt")
 skeleton = NodePath("")
 
 [node name="Plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(-51.0199, 1.50996e-07, 0, -7.70379e-06, -1, 0, 0, 0, 49.7499, -48.2798, 3.90814, 69.2191)
+transform = Transform3D(-51.0199, 1.50996e-07, 0, -7.70379e-06, -1, 0, 0, 0, 49.7499, -50.0114, 3.90814, 69.2191)
 mesh = SubResource("ArrayMesh_xum2b")
 skeleton = NodePath("")
 
@@ -370,6 +386,66 @@ transform = Transform3D(-4.22244e-08, 0, 0.85, 0, 0.823914, 0, -0.965981, 0, -3.
 [node name="Portal" parent="." instance=ExtResource("3_uciki")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -56.6031, 3.55472, 78.297)
 next_area = "res://scenes/locker_room.tscn"
-player_next_spawn_position = Vector3(-10, 1, -71)
+player_next_spawn_position = Vector3(-10, 3.5, -71)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t6mkd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8786, 2.04424, 75.8331)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 1.302
+light_volumetric_fog_energy = 15.943
+light_size = 0.207
+light_specular = 0.3
+shadow_enabled = true
+distance_fade_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8786, 2.04424, 67.3319)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 1.302
+light_volumetric_fog_energy = 15.943
+light_size = 0.207
+light_specular = 0.3
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8786, 2.04424, 59.0787)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 1.302
+light_volumetric_fog_energy = 15.943
+light_size = 0.207
+light_specular = 0.3
+shadow_enabled = true
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.757, 2.04424, 53.3461)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 1.302
+light_volumetric_fog_energy = 15.943
+light_size = 0.207
+light_specular = 0.3
+shadow_enabled = true
+distance_fade_enabled = true
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.9234, 2.04424, 53.1973)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 1.302
+light_volumetric_fog_energy = 15.943
+light_size = 0.207
+light_specular = 0.3
+shadow_enabled = true
+distance_fade_enabled = true
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.403, 2.04424, 53.1973)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 1.302
+light_volumetric_fog_energy = 15.943
+light_size = 0.207
+light_specular = 0.3
+shadow_enabled = true
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]

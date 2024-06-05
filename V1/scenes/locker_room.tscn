@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctv1au50pyv73"]
+[gd_scene load_steps=14 format=3 uid="uid://ctv1au50pyv73"]
 
 [ext_resource type="Texture2D" uid="uid://diaaqx8ysaj2y" path="res://assets/quarto1_floor_walls.png" id="1_budrs"]
 [ext_resource type="Script" path="res://scenes/locker_room.gd" id="1_djclk"]
 [ext_resource type="PackedScene" uid="uid://dpuamyyengo5l" path="res://assets/locker.glb" id="2_80war"]
 [ext_resource type="PackedScene" uid="uid://bcweybiu4ioyh" path="res://assets/page.glb" id="3_ne7u3"]
+[ext_resource type="PackedScene" uid="uid://bq1liqrw8kq0h" path="res://Door/door_model.tscn" id="6_natt8"]
 [ext_resource type="PackedScene" uid="uid://d3dcobnplnp6o" path="res://portal.tscn" id="9_umdii"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fat5k"]
@@ -48,41 +49,96 @@ shadow_mesh = SubResource("ArrayMesh_dn44u")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lr275"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5vsf"]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_color = Color(0.300925, 0.303163, 0.274333, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rfv28"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_frov6"]
+resource_name = "cenario_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_i5vsf"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_rfv28")
+
 [node name="locker_room" type="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.64051, 3.54, 74.8251)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2154, 3.54, 65.4937)
 script = ExtResource("1_djclk")
 
 [node name="Classroom" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5668, 3.97179, -71.9439)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -10.5668, 3.97179, -71.9439)
 mesh = SubResource("ArrayMesh_2ljlm")
 skeleton = NodePath("")
 
 [node name="locker_1" parent="." instance=ExtResource("2_80war")]
-transform = Transform3D(-0.45, 0, -6.79481e-08, 0, 0.45, 0, 6.79481e-08, 0, -0.45, -1.59892, 0, -62.736)
-
-[node name="locker_2" parent="." instance=ExtResource("2_80war")]
-transform = Transform3D(-0.45, 0, -6.79481e-08, 0, 0.45, 0, 6.79481e-08, 0, -0.45, -4.13993, 0, -62.736)
-
-[node name="locker_3" parent="." instance=ExtResource("2_80war")]
-transform = Transform3D(-0.45, 0, -6.79481e-08, 0, 0.45, 0, 6.79481e-08, 0, -0.45, -5.28944, 0, -62.736)
-
-[node name="locker_4" parent="." instance=ExtResource("2_80war")]
-transform = Transform3D(-0.45, 0, -6.79481e-08, 0, 0.45, 0, 6.79481e-08, 0, -0.45, -2.83666, 0, -62.736)
+transform = Transform3D(-0.11, 0, -1.66095e-08, 0, 0.11, 0, 1.66095e-08, 0, -0.11, -7.74411, 2.89694, -69.1407)
 
 [node name="page" parent="." instance=ExtResource("3_ne7u3")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -17.8819, -0.857611, -64.3803)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(23.68, 0, 0, 0, 0.3, 0, 0, 0, 23.562, -10.0668, 0.471788, -71.9439)
-visible = false
+transform = Transform3D(23.68, 0, 0, 0, 0.3, 0, 0, 0, 23.562, -10.067, 2.75262, -71.944)
 shape = SubResource("BoxShape3D_lr275")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.718454, 0.695574, 0, -0.695574, 0.718454, -9.58819, 6.41652, -83.462)
+transform = Transform3D(1, 0, 0, 0, 0.718454, 0.695574, 0, -0.695574, 0.718454, -7.07357, 6.41652, -83.462)
 visible = false
 
 [node name="Portal" parent="." instance=ExtResource("9_umdii")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -10.5, 3.5, -80.5)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -10.5232, 3.5, -75.7786)
 next_area = "res://scenes/level_v_3.tscn"
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(-13.5547, 1.50996e-07, 0, -2.0467e-06, -1, 0, 0, 0, 10.7012, -10.3904, 8.43781, -56.2289)
+mesh = SubResource("ArrayMesh_frov6")
+skeleton = NodePath("")
+
+[node name="DoorModel" parent="." instance=ExtResource("6_natt8")]
+transform = Transform3D(-0.3, 0, -4.52987e-08, 0, 0.3, 0, 4.52987e-08, 0, -0.3, -10.5745, 2.6143, -74.9555)
+
+[node name="Plane2" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.21535, -2.1977e-06, 0, 1.49414e-06, 1, 0, 0, 0, 14.663, -8.75954, 1.97654, -69.0323)
+mesh = SubResource("ArrayMesh_frov6")
+skeleton = NodePath("")
+
+[node name="Plane3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.76076e-14, 4.37114e-08, 14.663, 9.21535, -4.37114e-08, 0, 4.02816e-07, 1, -6.40942e-07, -10.1345, 1.97654, -80.7981)
+mesh = SubResource("ArrayMesh_frov6")
+skeleton = NodePath("")
+
+[node name="locker_2" parent="." instance=ExtResource("2_80war")]
+transform = Transform3D(-0.11, 0, -1.66095e-08, 0, 0.11, 0, 1.66095e-08, 0, -0.11, -8.04957, 2.91702, -69.1407)
+
+[node name="locker_3" parent="." instance=ExtResource("2_80war")]
+transform = Transform3D(-0.11, 0, -1.66095e-08, 0, 0.11, 0, 1.66095e-08, 0, -0.11, -8.36549, 2.9056, -69.1407)
+
+[node name="locker_4" parent="." instance=ExtResource("2_80war")]
+transform = Transform3D(-0.11, 0, -1.66095e-08, 0, 0.11, 0, 1.66095e-08, 0, -0.11, -8.65976, 2.88984, -69.1407)
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
