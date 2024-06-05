@@ -1,9 +1,9 @@
 extends Node
 
-var save_data: SaveData = SaveData.create_new();
+var save_data: SaveData = SaveData.create_new()
 
-const save_directory: String = "user://saves/";
-const default_save_name: String  = "New Save";
+const save_directory: String = "user://saves/"
+const default_save_name: String = "New Save"
 
 func _ready():
 	save_data.save_name = "Test Save Data Name"
@@ -28,12 +28,12 @@ static func change_save_name(some_save_data: SaveData, new_save_name: String) ->
 		DirAccess.remove_absolute(Save.get_save_path(some_save_data.save_name))
 	
 	Save.save_specific_data(some_save_data)
-	
+
 static func get_save_path(save_name: String) -> String:
-	return save_directory + save_name + ".tres";
+	return save_directory + save_name + ".tres"
 
 func save() -> void:
-	Save.save_specific_data(self.save_data);
+	Save.save_specific_data(self.save_data)
 
 func load(save_name: String) -> void:
 	var path = Save.get_save_path(save_name)
@@ -45,4 +45,4 @@ func load(save_name: String) -> void:
 		save()
 
 static func save_specific_data(some_save_data: SaveData) -> void:
-	ResourceSaver.save(some_save_data, Save.get_save_path(some_save_data.save_name), ResourceSaver.FLAG_NONE);
+	ResourceSaver.save(some_save_data, Save.get_save_path(some_save_data.save_name), ResourceSaver.FLAG_NONE)

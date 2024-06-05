@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2c2qehxlnihr"]
+
+[ext_resource type="Script" path="res://scenes/Player.gd" id="1_kchju"]
+[ext_resource type="Script" path="res://scenes/RayCast3D.gd" id="2_w11ss"]
+[ext_resource type="PackedScene" uid="uid://b5u1nulvk2uya" path="res://walk.glb" id="3_qau1v"]
+[ext_resource type="PackedScene" uid="uid://cllo1nfsxgo37" path="res://scenes/healthbar.tscn" id="4_581py"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_336gw"]
+height = 2.15865
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0)
+collision_mask = 3
+script = ExtResource("1_kchju")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.276, 0, 0, 0, 0.29, 0, 0, 0, 0.276, -0.05, 0.32, 0)
+shape = SubResource("CapsuleShape3D_336gw")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 8.74228e-08, 1, 8.74228e-08, 1, -8.74228e-08, 4.37114e-08, 0, 0.45, 0)
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+
+[node name="RayCast3D" type="RayCast3D" parent="SpringArm3D"]
+transform = Transform3D(-1.16533e-08, -3.28087e-09, 0.276, -0.0714341, 0.280118, 0, -0.266596, -0.0750575, -1.20643e-08, 0, 0, 0)
+target_position = Vector3(10, 0, 0)
+collision_mask = 3
+script = ExtResource("2_w11ss")
+
+[node name="Label" type="Label" parent="SpringArm3D/RayCast3D"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -24.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Message
+[Key]"
+horizontal_alignment = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -2.98023e-08, -7.10543e-15, -1.49012e-08, 1, -7.10543e-15, 0, 1.42109e-14, 1, -3.43923e-15, 5.96047e-08, -3.55271e-15)
+
+[node name="walk" parent="MeshInstance3D" instance=ExtResource("3_qau1v")]
+transform = Transform3D(1, 2.98023e-08, 7.10543e-15, 1.49012e-08, 1, 7.10544e-15, -2.11758e-22, -1.42109e-14, 1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="MeshInstance3D/walk/Armature" index="0"]
+bones/0/position = Vector3(-0.0495963, 0.163105, 2.77556e-16)
+bones/0/rotation = Quaternion(-0.0329847, 0.706337, 0.0329847, 0.706337)
+bones/1/rotation = Quaternion(0.0375382, -3.90128e-08, 2.51996e-09, 0.999295)
+bones/2/rotation = Quaternion(-0.00017417, 0.998465, 0.0551852, 0.00470784)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(-0.000239945, 0.999573, 0.00965083, 0.0275891)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(0.225761, 0.565683, 0.77878, 0.150122)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.326656, -0.00893465, 0.629263, 0.705155)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.928695, -0.230083, 0.284875, 0.0586006)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.545565, 0.0434732, 0.4349, 0.715074)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(-0.000845438, 0.244514, 0.969646, -5.59819e-05)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(-0.165171, 0.000623103, -0.000104269, 0.986265)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/rotation = Quaternion(0.470924, -0.000680949, 3.99852e-05, 0.882174)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(0.16628, 4.16664e-05, 1.65373e-05, 0.986079)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(-5.21907e-09, -0.175333, 0.984509, 2.91652e-08)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(-0.233895, -0.00339408, 0.000816631, 0.972256)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(0.768326, 0.00223431, -0.00268215, 0.640049)
+bones/15/rotation = Quaternion(0.234729, -2.85921e-08, 1.23972e-08, 0.972061)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/position = Vector3(0.0209228, 0.0166924, 0.0332524)
+bones/16/rotation = Quaternion(0.5, -0.5, -0.5, -0.5)
+bones/17/rotation = Quaternion(0, 0, 1, 0)
+bones/18/position = Vector3(-0.106916, 0.0258524, -0.0346253)
+bones/18/rotation = Quaternion(0.5, -0.5, -0.5, -0.5)
+bones/20/position = Vector3(-0.0947486, 0.210738, 0.115884)
+bones/20/rotation = Quaternion(0.5, -0.5, -0.5, -0.5)
+bones/22/position = Vector3(0.0238399, 0.222658, -0.115517)
+bones/22/rotation = Quaternion(0.5, -0.5, -0.5, -0.5)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Healthbar" parent="CanvasLayer" instance=ExtResource("4_581py")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1.0
+offset_right = 0.0
+offset_bottom = 1.0
+grow_horizontal = 0
+
+[editable path="MeshInstance3D/walk"]

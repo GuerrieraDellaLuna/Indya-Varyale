@@ -1,0 +1,101 @@
+[gd_scene load_steps=16 format=3 uid="uid://dhpxa1hwtac5l"]
+
+[ext_resource type="PackedScene" path="res://scenes/room.tscn" id="1_031q6"]
+[ext_resource type="PackedScene" path="res://scenes/room_2.tscn" id="2_lqqy7"]
+[ext_resource type="PackedScene" path="res://scenes/room_3.tscn" id="3_s1tkh"]
+[ext_resource type="PackedScene" path="res://scenes/room_4.tscn" id="4_1f5pm"]
+[ext_resource type="PackedScene" path="res://scenes/room_5.tscn" id="4_8t8c1"]
+[ext_resource type="PackedScene" path="res://scenes/room_6.tscn" id="6_h1knv"]
+[ext_resource type="PackedScene" path="res://scenes/room_7.tscn" id="7_1iiqc"]
+[ext_resource type="PackedScene" path="res://scenes/room_8.tscn" id="8_p6br4"]
+[ext_resource type="PackedScene" path="res://scenes/room_9.tscn" id="9_bon01"]
+[ext_resource type="PackedScene" uid="uid://d2c2qehxlnihr" path="res://scenes/player.tscn" id="10_en32l"]
+[ext_resource type="PackedScene" uid="uid://dlnun7e6rvtdi" path="res://scenes/collectible.tscn" id="11_nqfh6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7g2v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_igm40"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xj7w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_df7nd"]
+
+[node name="level_V2" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="school_skeleton" type="Node3D" parent="."]
+
+[node name="Wall1" type="StaticBody3D" parent="school_skeleton"]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 0.044, 0, 0.51451, -7.50257)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="school_skeleton/Wall1"]
+shape = SubResource("BoxShape3D_a7g2v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="school_skeleton/Wall1"]
+mesh = SubResource("BoxMesh_igm40")
+
+[node name="Wall2" type="StaticBody3D" parent="school_skeleton"]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 0.044, 0, 0.51451, 7.46438)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="school_skeleton/Wall2"]
+shape = SubResource("BoxShape3D_a7g2v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="school_skeleton/Wall2"]
+mesh = SubResource("BoxMesh_igm40")
+
+[node name="Wall3" type="StaticBody3D" parent="school_skeleton"]
+transform = Transform3D(-6.55671e-07, 0, 0.044, 0, 1, 0, -15, 0, -1.9233e-09, 7.47309, 0.51451, -0.0394852)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="school_skeleton/Wall3"]
+shape = SubResource("BoxShape3D_a7g2v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="school_skeleton/Wall3"]
+mesh = SubResource("BoxMesh_igm40")
+
+[node name="Wall4" type="StaticBody3D" parent="school_skeleton"]
+transform = Transform3D(-6.55671e-07, 0, 0.044, 0, 1, 0, -15, 0, -1.9233e-09, -7.49222, 0.51451, -0.0394852)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="school_skeleton/Wall4"]
+shape = SubResource("BoxShape3D_a7g2v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="school_skeleton/Wall4"]
+mesh = SubResource("BoxMesh_igm40")
+
+[node name="Floor" type="StaticBody3D" parent="school_skeleton"]
+transform = Transform3D(15, 0, 0, 0, 0.05, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="school_skeleton/Floor"]
+shape = SubResource("BoxShape3D_8xj7w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="school_skeleton/Floor"]
+mesh = SubResource("BoxMesh_df7nd")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="Room" parent="." instance=ExtResource("1_031q6")]
+
+[node name="Room2" parent="." instance=ExtResource("2_lqqy7")]
+
+[node name="Room3" parent="." instance=ExtResource("3_s1tkh")]
+
+[node name="Room4" parent="." instance=ExtResource("4_1f5pm")]
+
+[node name="Room5" parent="." instance=ExtResource("4_8t8c1")]
+transform = Transform3D(1.09959, 0, 0, 0, 1, 0, 0, 0, 1.86752, 1.59864, 0, -1.1381)
+
+[node name="Room6" parent="." instance=ExtResource("6_h1knv")]
+
+[node name="Room7" parent="." instance=ExtResource("7_1iiqc")]
+
+[node name="Room8" parent="." instance=ExtResource("8_p6br4")]
+
+[node name="Room9" parent="." instance=ExtResource("9_bon01")]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("10_en32l")]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -1.55947, 0.025, 0.672046)
+metadata/_edit_lock_ = true
+
+[node name="Collectible" parent="." instance=ExtResource("11_nqfh6")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.763466, 0.00699043, 0.443984)

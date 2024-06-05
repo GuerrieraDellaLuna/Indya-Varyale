@@ -13,12 +13,21 @@ func get_first_item_page_index() -> int:
 
 func add_page(page_number: int) -> void:
 	var page = Page.from_number(page_number);
+	print(page_number)
+	print(len(unlocked_pages))
 	for i in range(len(unlocked_pages) - 1):
 		if unlocked_pages[i].page_number < page_number:
 			unlocked_pages.insert(i, page);
+			print(len(unlocked_pages))
 			return;
-	
+			
 	unlocked_pages.insert(len(unlocked_pages), page);
+	print(len(unlocked_pages))
+	
+func unlock_page_for_item(item_resource: Resource) -> void:
+	if item_resource is Item:
+		var page_number = item_resource.page_number
+		add_page(page_number)
 	
 func flip_page_right() -> void:
 	current_page = min(len(unlocked_pages)-1, current_page+1);
