@@ -1,5 +1,6 @@
 extends CharacterBody3D
 var animationPlayer : AnimationPlayer
+var animationPlayer2 : AnimationPlayer
 var speed = 0.5
 var direction = Vector3()
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -10,8 +11,8 @@ var hitDistance = 0.3
 
 func _ready():
 	animationPlayer = $AnimationPlayer
+	animationPlayer2 = $AnimationPlayer2
 	randomize_direction()
-	print(player)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -36,7 +37,9 @@ func _physics_process(delta):
 		var distanceToPlayer = global_transform.origin.distance_to(playerPosition)
 		if distanceToPlayer < hitDistance:
 			animationPlayer.stop()
+			animationPlayer2.play("atack")
 		else:
+			animationPlayer2.stop()
 			animationPlayer.play("walk")
 		# Check if player is within chase distance
 		if distanceToPlayer < chaseDistance:

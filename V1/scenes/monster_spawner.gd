@@ -26,8 +26,6 @@ func _on_spawn_timer_timeout():
 
 func spawn():
 	# Instance a new monster
-	print("spawned")
-	print(len(monsters))
 	var monster = monster_scene.instantiate()
 	monster.transform.basis = monster.transform.basis.scaled(Vector3(0.006, 0.006, 0.006))
 	monster.transform.origin = Vector3(-1.5,-0.05,-2.5)
