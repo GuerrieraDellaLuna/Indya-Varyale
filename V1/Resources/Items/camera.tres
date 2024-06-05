@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cqi5ejahdw4vb"]
+
+[ext_resource type="Script" path="res://Resources/Items/Item.gd" id="1_2kla5"]
+
+[resource]
+script = ExtResource("1_2kla5")
+item_identifier = "camera"
+page_number = 41

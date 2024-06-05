@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1qicc0v8x270"]
+[gd_scene load_steps=6 format=3 uid="uid://d1qicc0v8x270"]
+
+[ext_resource type="PackedScene" uid="uid://ch66gbgcgbkad" path="res://scenes/door.tscn" id="1_thpkl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_s08gc"]
 
@@ -100,3 +102,15 @@ mesh = SubResource("BoxMesh_1hu8t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall6"]
 shape = SubResource("BoxShape3D_bnfb7")
+
+[node name="Door1" parent="." instance=ExtResource("1_thpkl")]
+transform = Transform3D(0.113968, 0, 0, 0, 0.200099, 0, 0, 0, 0.331186, 0.610431, 0.526619, 1.50425)
+
+[node name="Door2" parent="." instance=ExtResource("1_thpkl")]
+transform = Transform3D(0.113968, 0, 0, 0, 0.200099, 0, 0, 0, 0.331186, -0.449529, 0.526619, -1.49272)
+
+[node name="Door3" parent="." instance=ExtResource("1_thpkl")]
+transform = Transform3D(-4.9817e-09, 0, 0.331186, 0, 0.200099, 0, -0.113968, 0, -1.44766e-08, -1.48644, 0.526619, 0.469581)
+
+[node name="Door4" parent="." instance=ExtResource("1_thpkl")]
+transform = Transform3D(-4.9817e-09, 0, 0.331186, 0, 0.200099, 0, -0.113968, 0, -1.44766e-08, 1.49803, 0.526619, -0.535452)

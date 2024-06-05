@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpr084rbreixq"]
+[gd_scene load_steps=6 format=3 uid="uid://dlnun7e6rvtdi"]
 
 [ext_resource type="Script" path="res://scenes/collectible.gd" id="1_umov8"]
-[ext_resource type="PackedScene" uid="uid://2hauyakfyhrb" path="res://assets/camera.glb" id="2_12pm6"]
+[ext_resource type="PackedScene" uid="uid://misegpq8s2bl" path="res://assets/camera.glb" id="2_12pm6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_72pux"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pia2g"]
+radius = 7.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tjs8w"]
 
 [node name="StaticBody3D" type="StaticBody3D"]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+collision_layer = 2
 script = ExtResource("1_umov8")
 
 [node name="camera" parent="." instance=ExtResource("2_12pm6")]
@@ -17,6 +21,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.365975, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
 mesh = SubResource("BoxMesh_72pux")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000377327, 1.21134, 0.00116303)
+shape = SubResource("SphereShape3D_pia2g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.062, 0, 0, 0, 4.163, 0.000377327, 1.21134, 0.00116303)

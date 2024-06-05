@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_f6i84")
 item_identifier = "pendant"
+page_number = 40
