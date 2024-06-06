@@ -1,11 +1,11 @@
 extends StaticBody3D
 
 # Path to the player scene file
-var player_path: String = "res://scenes/player.tscn"
+const player_path: String = "res://scenes/player.tscn"
 
 func _ready():
 	# Load the player scene and instantiate it
-	var player_scene = load(player_path)
+	var player_scene = preload(player_path)
 	if player_scene:
 		var player = player_scene.instantiate()
 		

@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=11 format=3 uid="uid://blrtid8xe6ery"]
+=======
+[gd_scene load_steps=11 format=3 uid="uid://hl0ud6hvp2vv"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://bq1liqrw8kq0h" path="res://Door/door_model.tscn" id="1_fj12k"]
 [ext_resource type="Texture2D" uid="uid://k7adt7pwhbcj" path="res://assets/quarto2_floor_walls.png" id="2_mui5m"]

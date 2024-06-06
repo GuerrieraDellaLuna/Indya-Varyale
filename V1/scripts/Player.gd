@@ -11,7 +11,7 @@ const MOUSE_SENSITIVITY = 0.0015
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var health = 100
 
-@onready var spring_arm: SpringArm3D = $SpringArm3D
+@onready var spring_arm: SpringArm3D = $CameraRoot/HorizontalRotation/VerticalRotation/SpringArm3D
 @onready var model: MeshInstance3D = $MeshInstance3D
 @onready var animation_player: AnimationPlayer = $MeshInstance3D/walk/AnimationPlayer
 var health_bar: HealthBar

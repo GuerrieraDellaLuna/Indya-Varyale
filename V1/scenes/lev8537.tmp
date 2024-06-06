@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/level_v_3.gd" id="1_2btmd"]
 [ext_resource type="PackedScene" uid="uid://d2c2qehxlnihr" path="res://scenes/player.tscn" id="2_fr75u"]
 [ext_resource type="PackedScene" uid="uid://drnys0gd6y2ug" path="res://scenes/scenario.tscn" id="2_qe48i"]
-[ext_resource type="PackedScene" uid="uid://ctgfs5wng6v2p" path="res://scenes/monster.tscn" id="3_wrdwm"]
+[ext_resource type="PackedScene" uid="uid://bmt5e3uy7fwue" path="res://scenes/monster.tscn" id="3_wrdwm"]
 [ext_resource type="PackedScene" uid="uid://eegpf7tycsqx" path="res://scenes/page.tscn" id="4_i3tmg"]
 [ext_resource type="PackedScene" uid="uid://dlnun7e6rvtdi" path="res://scenes/collectible.tscn" id="5_kkdm1"]
 
@@ -16,17 +16,14 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 visible = false
 shadow_enabled = true
 
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_fr75u")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.37301, 0)
+
 [node name="scenario" parent="." instance=ExtResource("2_qe48i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5456, 0, -65.4663)
 
 [node name="page" parent="." instance=ExtResource("4_i3tmg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21976, -1.0474, 13.5369)
-
-[node name="page2" parent="." instance=ExtResource("4_i3tmg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21976, -0.689448, 21.2758)
-
-[node name="page3" parent="." instance=ExtResource("4_i3tmg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75156, -0.689448, 21.2758)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -1.73253, 0)
 
 [node name="StaticBody3D" parent="." instance=ExtResource("5_kkdm1")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -13.8375, 0.626637, 0)
@@ -45,6 +42,3 @@ transform = Transform3D(-1.74846e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.74846e-0
 
 [node name="Monster2" parent="." instance=ExtResource("3_wrdwm")]
 transform = Transform3D(-1.74846e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.74846e-09, 30.5302, 0.450041, 19.5323)
-
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_fr75u")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.30548, 0.842811, -5.1252)

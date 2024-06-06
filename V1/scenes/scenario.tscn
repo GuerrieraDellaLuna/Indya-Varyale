@@ -50,7 +50,7 @@ cull_mode = 2
 albedo_color = Color(0.300925, 0.303163, 0.274333, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0ndhl"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xxd12"]
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
 "format": 34896613377,
@@ -80,7 +80,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_0ndhl")
+shadow_mesh = SubResource("ArrayMesh_xxd12")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_38kd8"]
 size = Vector3(1, 0.005, 1)
@@ -119,8 +119,7 @@ mesh = SubResource("ArrayMesh_xum2b")
 skeleton = NodePath("")
 
 [node name="CollisionShape_floor" type="CollisionShape3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -50.1437, 0.132956, 68.7014)
-visible = false
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -50.1437, 0.18031, 68.7014)
 shape = SubResource("BoxShape3D_38kd8")
 
 [node name="CollisionShape3D_room_1_wall_1" type="CollisionShape3D" parent="."]
@@ -393,6 +392,46 @@ environment = SubResource("Environment_t6mkd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8786, 2.04424, 75.8331)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 1.302
+light_volumetric_fog_energy = 15.943
+light_size = 0.207
+light_specular = 0.3
+shadow_enabled = true
+distance_fade_enabled = true
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8786, 2.04424, 85.0615)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 1.302
+light_volumetric_fog_energy = 15.943
+light_size = 0.207
+light_specular = 0.3
+shadow_enabled = true
+distance_fade_enabled = true
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.1944, 2.04424, 85.0615)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 1.302
+light_volumetric_fog_energy = 15.943
+light_size = 0.207
+light_specular = 0.3
+shadow_enabled = true
+distance_fade_enabled = true
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.1164, 2.04424, 85.0615)
+light_color = Color(1, 1, 0.886275, 1)
+light_energy = 1.302
+light_volumetric_fog_energy = 15.943
+light_size = 0.207
+light_specular = 0.3
+shadow_enabled = true
+distance_fade_enabled = true
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.9753, 2.04424, 85.0615)
 light_color = Color(1, 1, 0.886275, 1)
 light_energy = 1.302
 light_volumetric_fog_energy = 15.943

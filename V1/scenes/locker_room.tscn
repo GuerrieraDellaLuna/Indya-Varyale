@@ -55,7 +55,7 @@ cull_mode = 2
 albedo_color = Color(0.300925, 0.303163, 0.274333, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rfv28"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0ndhl"]
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
 "format": 34896613377,
@@ -69,7 +69,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_frov6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ipsgr"]
 resource_name = "cenario_Plane"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
@@ -85,19 +85,16 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_rfv28")
+shadow_mesh = SubResource("ArrayMesh_0ndhl")
 
 [node name="locker_room" type="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2154, 3.54, 65.4937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 72.181)
 script = ExtResource("1_djclk")
 
 [node name="Classroom" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -10.5668, 3.97179, -71.9439)
 mesh = SubResource("ArrayMesh_2ljlm")
 skeleton = NodePath("")
-
-[node name="locker_1" parent="." instance=ExtResource("2_80war")]
-transform = Transform3D(-0.11, 0, -1.66095e-08, 0, 0.11, 0, 1.66095e-08, 0, -0.11, -7.74411, 2.89694, -69.1407)
 
 [node name="page" parent="." instance=ExtResource("3_ne7u3")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -17.8819, -0.857611, -64.3803)
@@ -114,31 +111,181 @@ visible = false
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -10.5232, 3.5, -75.7786)
 next_area = "res://scenes/level_v_3.tscn"
 
-[node name="Plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(-13.5547, 1.50996e-07, 0, -2.0467e-06, -1, 0, 0, 0, 10.7012, -10.3904, 8.43781, -56.2289)
-mesh = SubResource("ArrayMesh_frov6")
-skeleton = NodePath("")
-
 [node name="DoorModel" parent="." instance=ExtResource("6_natt8")]
 transform = Transform3D(-0.3, 0, -4.52987e-08, 0, 0.3, 0, 4.52987e-08, 0, -0.3, -10.5745, 2.6143, -74.9555)
 
-[node name="Plane2" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.21535, -2.1977e-06, 0, 1.49414e-06, 1, 0, 0, 0, 14.663, -8.75954, 1.97654, -69.0323)
-mesh = SubResource("ArrayMesh_frov6")
+[node name="lockers" type="Node3D" parent="."]
+transform = Transform3D(-0.11, 0, -1.66095e-08, 0, 0.11, 0, 1.66095e-08, 0, -0.11, -7.74411, 2.89694, -69.1407)
+
+[node name="locker_1" parent="lockers" instance=ExtResource("2_80war")]
+
+[node name="locker_2" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77691, 0.182541, 0)
+
+[node name="locker_3" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.64891, 0.0787239, 0)
+
+[node name="locker_4" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.32409, -0.0645485, 0)
+
+[node name="locker_5" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1585, -0.0645485, 0)
+
+[node name="locker_6" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0734, -0.0645485, 0)
+
+[node name="locker_7" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1219, -0.0645485, 0)
+
+[node name="locker_8" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2134, -0.0645485, 3.8147e-06)
+
+[node name="locker_9" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5786, -0.0645485, 3.8147e-06)
+
+[node name="locker_10" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6558, -0.0645485, 3.8147e-06)
+
+[node name="locker_11" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1749, -0.0645485, 3.8147e-06)
+
+[node name="locker_12" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5582, -0.0645485, 3.8147e-06)
+
+[node name="locker_13" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.8181, -0.0645485, 3.8147e-06)
+
+[node name="locker_14" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1652, -0.0645485, 3.8147e-06)
+
+[node name="locker_15" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.9855, -0.0645485, 3.8147e-06)
+
+[node name="locker_16" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.8121, -0.0645485, 7.62939e-06)
+
+[node name="locker_17" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.4771, 0, 3.62369)
+
+[node name="locker_18" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.4365, 0.182541, 6.40038)
+
+[node name="locker_19" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.3944, 0.0787239, 9.27201)
+
+[node name="locker_20" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.3552, -0.0645485, 11.9469)
+
+[node name="locker_21" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.3137, -0.0645485, 14.7811)
+
+[node name="locker_22" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.2711, -0.0645485, 17.6956)
+
+[node name="locker_23" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.2264, -0.0645485, 20.7438)
+
+[node name="locker_24" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.1811, -0.0645485, 23.835)
+
+[node name="locker_25" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.1319, -0.0645485, 27.1998)
+
+[node name="locker_26" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.0868, -0.0645485, 30.2767)
+
+[node name="locker_27" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 48.0353, -0.0645485, 33.7954)
+
+[node name="locker_28" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 47.9857, -0.0645485, 37.1783)
+
+[node name="locker_29" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 47.938, -0.0645485, 40.4379)
+
+[node name="locker_30" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 47.889, -0.0645485, 43.7846)
+
+[node name="locker_31" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 47.8331, -0.0645485, 47.6044)
+
+[node name="locker_32" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.0802858, 0, -0.996772, 0, 1, 0, 0.996772, 0, 0.0802858, 47.7917, -0.0645485, 50.4308)
+
+[node name="locker_33" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.543013, 0, 3.62264)
+
+[node name="locker_34" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.512636, 0.182541, 6.39939)
+
+[node name="locker_35" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.481207, 0.0787239, 9.27117)
+
+[node name="locker_36" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.451921, -0.0645485, 11.9462)
+
+[node name="locker_37" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.420906, -0.0645485, 14.7805)
+
+[node name="locker_38" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.389006, -0.0645485, 17.6952)
+
+[node name="locker_39" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.355652, -0.0645485, 20.7435)
+
+[node name="locker_40" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.321825, -0.0645485, 23.8349)
+
+[node name="locker_41" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.285006, -0.0645485, 27.1998)
+
+[node name="locker_42" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.251318, -0.0645485, 30.2769)
+
+[node name="locker_43" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.212812, -0.0645485, 33.7957)
+
+[node name="locker_44" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.175793, -0.0645485, 37.1789)
+
+[node name="locker_45" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.140118, -0.0645485, 40.4386)
+
+[node name="locker_46" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.103493, -0.0645485, 43.7854)
+
+[node name="locker_47" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.0616913, -0.0645485, 47.6055)
+
+[node name="locker_48" parent="lockers" instance=ExtResource("2_80war")]
+transform = Transform3D(0.999673, 0, 0.0255837, 0, 1, 0, -0.0255837, 0, 0.999673, -0.0307541, -0.0645485, 50.432)
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.84949, 1.50996e-07, 0, -5.81256e-07, -1, 0, 0, 0, 3.59039, -10.5784, 3.94003, -71.5996)
+mesh = SubResource("ArrayMesh_ipsgr")
 skeleton = NodePath("")
 
-[node name="Plane3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.76076e-14, 4.37114e-08, 14.663, 9.21535, -4.37114e-08, 0, 4.02816e-07, 1, -6.40942e-07, -10.1345, 1.97654, -80.7981)
-mesh = SubResource("ArrayMesh_frov6")
-skeleton = NodePath("")
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0144, 3.83194, -71.9855)
 
-[node name="locker_2" parent="." instance=ExtResource("2_80war")]
-transform = Transform3D(-0.11, 0, -1.66095e-08, 0, 0.11, 0, 1.66095e-08, 0, -0.11, -8.04957, 2.91702, -69.1407)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.32414e-15, 1.31134e-08, 8.5787, 2.26313, -1.31134e-08, 0, 9.89247e-08, 0.3, -3.74987e-07, -10.067, 2.78704, -69.2288)
+shape = SubResource("BoxShape3D_lr275")
 
-[node name="locker_3" parent="." instance=ExtResource("2_80war")]
-transform = Transform3D(-0.11, 0, -1.66095e-08, 0, 0.11, 0, 1.66095e-08, 0, -0.11, -8.36549, 2.9056, -69.1407)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-9.89247e-08, -0.3, 0, 2.26313, -1.31134e-08, 0, 0, 0, 8.5787, -7.6042, 2.78704, -72.0919)
+shape = SubResource("BoxShape3D_lr275")
 
-[node name="locker_4" parent="." instance=ExtResource("2_80war")]
-transform = Transform3D(-0.11, 0, -1.66095e-08, 0, 0.11, 0, 1.66095e-08, 0, -0.11, -8.65976, 2.88984, -69.1407)
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(-9.89247e-08, -0.3, 0, 2.26313, -1.31134e-08, 0, 0, 0, 8.5787, -13.3158, 2.78704, -72.0919)
+shape = SubResource("BoxShape3D_lr275")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.32414e-15, 1.31134e-08, 3.28154, 2.26313, -1.31134e-08, 0, 9.89247e-08, 0.3, -1.4344e-07, -8.60041, 2.78704, -75.1321)
+shape = SubResource("BoxShape3D_lr275")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.32414e-15, 1.31134e-08, 3.28154, 2.26313, -1.31134e-08, 0, 9.89247e-08, 0.3, -1.4344e-07, -12.58, 2.78704, -75.1321)
+shape = SubResource("BoxShape3D_lr275")
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
