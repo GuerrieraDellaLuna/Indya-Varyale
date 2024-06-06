@@ -20,10 +20,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.5
-offset_top = -50.5
-offset_right = 27.5
-offset_bottom = 50.5
+offset_left = -104.0
+offset_top = -175.0
+offset_right = 124.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -40,13 +40,13 @@ layout_mode = 2
 text = "quit"
 
 [node name="MenuZ" type="Sprite2D" parent="."]
-position = Vector2(571, 145)
+position = Vector2(953, 190)
 texture = ExtResource("2_eu4oy")
 
 [node name="Background" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(585, 285)
-scale = Vector2(2.43042, 1.44959)
+position = Vector2(895, 496)
+scale = Vector2(9.79566, -3.49839)
 texture = ExtResource("1_2kvia")
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]

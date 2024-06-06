@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dae4pfnvalnq5"]
-
-[ext_resource type="Script" path="res://Entities/Triggers/SceneTriggerHolder.gd" id="1_1m427"]
-
-[node name="SceneTriggerHolder" type="Node3D"]
-script = ExtResource("1_1m427")

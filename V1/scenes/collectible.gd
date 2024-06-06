@@ -40,11 +40,11 @@ func collect() -> void:
 		print("Fuck")
 	
 func _on_Area3D_body_entered(body):
-	if body is Player:
+	if body.is_in_group("player"):
 		print("Player entered the area")
 		body.set_nearby_collectable(self)
 
 func _on_Area3D_body_exited(body):
-	if body is Player:
+	if body.is_in_group("player"):
 		print("Player exited the area")
 		body.set_nearby_collectable(null)

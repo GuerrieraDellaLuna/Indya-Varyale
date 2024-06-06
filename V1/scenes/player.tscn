@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2c2qehxlnihr"]
+[gd_scene load_steps=6 format=3 uid="uid://dx6g0cq42d76v"]
 
 [ext_resource type="Script" path="res://scenes/Player.gd" id="1_kchju"]
 [ext_resource type="Script" path="res://scenes/RayCast3D.gd" id="2_w11ss"]
 [ext_resource type="PackedScene" uid="uid://b5u1nulvk2uya" path="res://walk.glb" id="3_qau1v"]
-[ext_resource type="PackedScene" uid="uid://cllo1nfsxgo37" path="res://scenes/healthbar.tscn" id="4_581py"]
+[ext_resource type="PackedScene" uid="uid://dail2w32vhpa1" path="res://scenes/healthbar.tscn" id="4_581py"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_336gw"]
 height = 2.15865
@@ -58,7 +58,6 @@ bones/3/scale = Vector3(1, 1, 1)
 bones/4/rotation = Quaternion(0.225761, 0.565683, 0.77878, 0.150122)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/rotation = Quaternion(-0.326656, -0.00893465, 0.629263, 0.705155)
-bones/5/scale = Vector3(1, 1, 1)
 bones/6/rotation = Quaternion(0.928695, -0.230083, 0.284875, 0.0586006)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/rotation = Quaternion(0.545565, 0.0434732, 0.4349, 0.715074)
@@ -70,7 +69,6 @@ bones/9/scale = Vector3(1, 1, 1)
 bones/10/rotation = Quaternion(0.470924, -0.000680949, 3.99852e-05, 0.882174)
 bones/10/scale = Vector3(1, 1, 1)
 bones/11/rotation = Quaternion(0.16628, 4.16664e-05, 1.65373e-05, 0.986079)
-bones/11/scale = Vector3(1, 1, 1)
 bones/12/rotation = Quaternion(-5.21907e-09, -0.175333, 0.984509, 2.91652e-08)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/rotation = Quaternion(-0.233895, -0.00339408, 0.000816631, 0.972256)

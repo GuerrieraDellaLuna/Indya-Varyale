@@ -6,7 +6,7 @@ var direction = Vector3()
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var chaseDistance = 3.0
 var hitDistance = 1
-@onready var player = $"../CharacterBody3D"
+@onready var player = $"../Player"
 
 
 func _ready():
