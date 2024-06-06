@@ -1,6 +1,5 @@
 extends Node3D
 
-
 var ui_container: Control;
 var book_data: BookData;
 var book_ui: BookUI;
@@ -30,11 +29,13 @@ func _input(event):
 		get_viewport().set_input_as_handled();
 		if (book_open):
 			close_book();
+			
 		return
 		# open pause menu when implemented
 	
 	if event.is_action_pressed("open test dialogue"):
 		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/stage1.dialogue"), "test")
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 		return
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
