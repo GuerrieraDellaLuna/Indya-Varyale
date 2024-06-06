@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://dhpxa1hwtac5l"]
 
-[ext_resource type="PackedScene" path="res://scenes/room.tscn" id="1_031q6"]
-[ext_resource type="PackedScene" path="res://scenes/room_2.tscn" id="2_lqqy7"]
-[ext_resource type="PackedScene" path="res://scenes/room_3.tscn" id="3_s1tkh"]
-[ext_resource type="PackedScene" path="res://scenes/room_4.tscn" id="4_1f5pm"]
-[ext_resource type="PackedScene" path="res://scenes/room_5.tscn" id="4_8t8c1"]
-[ext_resource type="PackedScene" path="res://scenes/room_6.tscn" id="6_h1knv"]
-[ext_resource type="PackedScene" path="res://scenes/room_7.tscn" id="7_1iiqc"]
-[ext_resource type="PackedScene" path="res://scenes/room_8.tscn" id="8_p6br4"]
-[ext_resource type="PackedScene" path="res://scenes/room_9.tscn" id="9_bon01"]
+[ext_resource type="PackedScene" uid="uid://c3dsyar533l1g" path="res://scenes/room.tscn" id="1_031q6"]
+[ext_resource type="PackedScene" uid="uid://b1qkdjowfalom" path="res://scenes/room_2.tscn" id="2_lqqy7"]
+[ext_resource type="PackedScene" uid="uid://ba6s6yflv11pf" path="res://scenes/room_3.tscn" id="3_s1tkh"]
+[ext_resource type="PackedScene" uid="uid://clthnsb5mc21i" path="res://scenes/room_4.tscn" id="4_1f5pm"]
+[ext_resource type="PackedScene" uid="uid://d1qicc0v8x270" path="res://scenes/room_5.tscn" id="4_8t8c1"]
+[ext_resource type="PackedScene" uid="uid://hta3k3n5qsop" path="res://scenes/room_6.tscn" id="6_h1knv"]
+[ext_resource type="PackedScene" uid="uid://chsfvms1qb108" path="res://scenes/room_7.tscn" id="7_1iiqc"]
+[ext_resource type="PackedScene" uid="uid://0vmgfkmjhu32" path="res://scenes/room_8.tscn" id="8_p6br4"]
+[ext_resource type="PackedScene" uid="uid://bu5k0bfd3tk0b" path="res://scenes/room_9.tscn" id="9_bon01"]
 [ext_resource type="PackedScene" uid="uid://d2c2qehxlnihr" path="res://scenes/player.tscn" id="10_en32l"]
 [ext_resource type="PackedScene" uid="uid://dlnun7e6rvtdi" path="res://scenes/collectible.tscn" id="11_nqfh6"]
 
@@ -93,9 +93,8 @@ transform = Transform3D(1.09959, 0, 0, 0, 1, 0, 0, 0, 1.86752, 1.59864, 0, -1.13
 
 [node name="Room9" parent="." instance=ExtResource("9_bon01")]
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("10_en32l")]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -1.55947, 0.025, 0.672046)
-metadata/_edit_lock_ = true
+[node name="Player" parent="." instance=ExtResource("10_en32l")]
+transform = Transform3D(-0.977482, 0, 0.211018, 0, 0.999999, 0, -0.211018, 0, -0.977482, -1.31712, 0.11149, 0)
 
 [node name="Collectible" parent="." instance=ExtResource("11_nqfh6")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.763466, 0.00699043, 0.443984)

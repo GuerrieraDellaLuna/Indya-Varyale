@@ -15,6 +15,5 @@ func _physics_process(delta):
 		if detect is Collectable:
 			label.text = detect.get_label()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

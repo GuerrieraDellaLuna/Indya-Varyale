@@ -1,4 +1,4 @@
-extends ProgressBar
+class_name HealthBar extends ProgressBar
 
 @onready var timer = $Timer
 @onready var damage_bar = $DamageBar
@@ -28,6 +28,7 @@ func init_health(_health):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("Health Bar Initialized")
 	anchor_left = 1.0
 	anchor_top = 0.0
 	anchor_right = 1.0
