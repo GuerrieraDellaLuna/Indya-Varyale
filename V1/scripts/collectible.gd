@@ -27,17 +27,12 @@ func _process(delta):
 	
 # Handle the collection of the item
 func collect() -> void:
-	print("Collect function called")
-	if item_resource:
-		# Use the SaveManager singleton to access save_data
-		var save_data = Save.save_data
-		save_data.inventory.add_item(item_resource)
-		
-		print("Item added to inventory:", item_resource)
-		queue_free() # Remove the collectible from the scene
-		print("Collectible removed from scene")
-	else:
-		print("Fuck")
+	if not item_resource:
+		printerr("item_resource not found in collectible!")
+		return
+	
+	Save.save_data.inventory.add_item(item_resource)
+	queue_free()
 	
 func _on_Area3D_body_entered(body):
 	if body.is_in_group("player"):
