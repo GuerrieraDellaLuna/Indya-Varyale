@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dlnun7e6rvtdi"]
 
-[ext_resource type="Script" path="res://scenes/collectible.gd" id="1_umov8"]
+[ext_resource type="Script" path="res://scripts/collectible.gd" id="1_umov8"]
 [ext_resource type="PackedScene" uid="uid://misegpq8s2bl" path="res://assets/camera.glb" id="2_12pm6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_72pux"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpvflgm3as7gj"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_tghvf"]
+
+[sub_resource type="Gradient" id="Gradient_wl8li"]
+colors = PackedColorArray(0, 1, 0, 1, 1, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b5kfk"]
+gradient = SubResource("Gradient_wl8li")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kdc2"]
+albedo_texture = SubResource("GradientTexture2D_b5kfk")
+
+[sub_resource type="BoxMesh" id="BoxMesh_rmvy4"]
+material = SubResource("StandardMaterial3D_1kdc2")
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_flqnh"]
+size = Vector3(20, 1, 20)
+
+[node name="Test" type="Node3D"]
+script = ExtResource("1_tghvf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_rmvy4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_flqnh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.676555, 0.736392, -1.62871e-09, -0.0602876, -0.0553888, 0.996643, 0.73392, 0.674284, 0.0818689, 0, 10.8571, 0)
+light_color = Color(0.960784, 0.968627, 0, 1)
+light_energy = 1.102
