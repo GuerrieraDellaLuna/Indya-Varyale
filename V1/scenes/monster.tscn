@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://ctgfs5wng6v2p"]
 
-[ext_resource type="Script" path="res://scenes/monster.gd" id="1_rvbts"]
+[ext_resource type="Script" path="res://scripts/monster.gd" id="1_rvbts"]
 [ext_resource type="Texture2D" uid="uid://bjfi0uaxd6nnj" path="res://scenes/monster_attacking_Untitled.png" id="2_ob7tm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bkxgr"]

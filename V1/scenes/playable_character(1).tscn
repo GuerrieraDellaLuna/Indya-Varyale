@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bed18r8s5heea"]
+
+[node name="PlayableCharacter" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]

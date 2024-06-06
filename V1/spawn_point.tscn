@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://yu28dwtdgpfa"]
-
-[node name="spawn_point" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87578, 0, -71.4844)
-top_level = true

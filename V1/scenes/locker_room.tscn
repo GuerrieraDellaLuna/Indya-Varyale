@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://ctv1au50pyv73"]
 
 [ext_resource type="Texture2D" uid="uid://diaaqx8ysaj2y" path="res://assets/quarto1_floor_walls.png" id="1_budrs"]
-[ext_resource type="Script" path="res://scenes/locker_room.gd" id="1_djclk"]
+[ext_resource type="Script" path="res://scripts/locker_room.gd" id="1_djclk"]
 [ext_resource type="PackedScene" uid="uid://dpuamyyengo5l" path="res://assets/locker.glb" id="2_80war"]
 [ext_resource type="PackedScene" uid="uid://bcweybiu4ioyh" path="res://assets/page.glb" id="3_ne7u3"]
 [ext_resource type="PackedScene" uid="uid://bq1liqrw8kq0h" path="res://Door/door_model.tscn" id="6_natt8"]
-[ext_resource type="PackedScene" uid="uid://d3dcobnplnp6o" path="res://portal.tscn" id="9_umdii"]
+[ext_resource type="PackedScene" uid="uid://d3dcobnplnp6o" path="res://scenes/portal.tscn" id="9_umdii"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fat5k"]
 resource_name = "Material.012"
