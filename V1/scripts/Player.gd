@@ -40,6 +40,11 @@ func _unhandled_input(event):
 		input_dir.z = Input.get_action_strength("right") - Input.get_action_strength("left")
 		input_dir.x = Input.get_action_strength("forward") - Input.get_action_strength("back")
 
+func reduce_health(amount):
+	health -= amount
+	print("Health reduced, current health: ", health)
+
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

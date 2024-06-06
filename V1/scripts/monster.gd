@@ -4,8 +4,8 @@ var animationPlayer2 : AnimationPlayer
 var speed = 0.7
 var direction = Vector3()
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var chaseDistance = 3.0
-var hitDistance = 1
+var chaseDistance = 30
+var hitDistance = 10
 @onready var player = $"../Player"
 
 
@@ -38,6 +38,7 @@ func _physics_process(delta):
 		if distanceToPlayer < hitDistance:
 			animationPlayer.stop()
 			animationPlayer2.play("atack")
+			player.reduce_health(40)
 		else:
 			animationPlayer2.stop()
 			animationPlayer.play("walk")
