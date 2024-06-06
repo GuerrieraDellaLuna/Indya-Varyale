@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b81j2hpdqq228" path="res://assets/cenario_floor_walls.png" id="1_4hew1"]
 [ext_resource type="PackedScene" uid="uid://bq1liqrw8kq0h" path="res://Door/door_model.tscn" id="2_xybls"]
-[ext_resource type="PackedScene" uid="uid://d3dcobnplnp6o" path="res://portal.tscn" id="3_uciki"]
+[ext_resource type="PackedScene" uid="uid://d3dcobnplnp6o" path="res://scenes/portal.tscn" id="3_uciki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0ead"]
 resource_name = "Material.002"

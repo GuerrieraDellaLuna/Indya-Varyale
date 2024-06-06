@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dpuamyyengo5l" path="res://assets/locker.glb" id="2_80war"]
 [ext_resource type="PackedScene" uid="uid://bcweybiu4ioyh" path="res://assets/page.glb" id="3_ne7u3"]
 [ext_resource type="PackedScene" uid="uid://bq1liqrw8kq0h" path="res://Door/door_model.tscn" id="6_natt8"]
-[ext_resource type="PackedScene" uid="uid://d3dcobnplnp6o" path="res://portal.tscn" id="9_umdii"]
+[ext_resource type="PackedScene" uid="uid://d3dcobnplnp6o" path="res://scenes/portal.tscn" id="9_umdii"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fat5k"]
 resource_name = "Material.012"
