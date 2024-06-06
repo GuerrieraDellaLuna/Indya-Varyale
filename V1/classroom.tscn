@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c11q3fv0mhoak"]
-
-[ext_resource type="PackedScene" uid="uid://u2ngnii1dc0" path="res://assets/quarto2.glb" id="1_h3ntu"]
-
-[node name="Classroom" instance=ExtResource("1_h3ntu")]
-
-[node name="Classroom_002" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5582, 0, 4.45315, 0)

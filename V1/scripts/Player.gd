@@ -52,12 +52,9 @@ func _physics_process(delta):
 		speed = speed_still
 
 	# Check if interact key is pressed
-	if Input.is_action_just_pressed("interact"):
-		print("Interact key pressed")
-		if nearby_collectable:
-			print("Collecting:", nearby_collectable)
-			nearby_collectable.collect()
+	if Input.is_action_just_pressed("interact") and nearby_collectable:
+		nearby_collectable.collect()
 
 func set_nearby_collectable(collectable: Collectable):
 	nearby_collectable = collectable
-		
+

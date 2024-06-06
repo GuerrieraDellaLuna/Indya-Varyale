@@ -68,7 +68,7 @@ text = "Message
 horizontal_alignment = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.43923e-15, 5.96047e-08, -3.55271e-15)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.43923e-15, 5.96047e-08, -0.0253816)
 
 [node name="walk" parent="MeshInstance3D" instance=ExtResource("3_qau1v")]
 transform = Transform3D(1, 2.98023e-08, 7.10543e-15, 1.49012e-08, 1, 7.10544e-15, -2.11758e-22, -1.42109e-14, 1, 0, 0, 0)

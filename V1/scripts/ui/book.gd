@@ -39,9 +39,9 @@ func update_buttons() -> void:
 	flip_left_button.disabled = not book_data.can_flip_page_left();
 	flip_right_button.disabled = not book_data.can_flip_page_right();
 	
-	print("flip left button disabled = ", flip_left_button.disabled)
-	print("flip right button disabled = ", flip_right_button.disabled)
-		
+	#print("flip left button disabled = ", flip_left_button.disabled)
+	#print("flip right button disabled = ", flip_right_button.disabled)
+	
 
 func update_page():
 	var curr_page: Page = book_data.get_current_page();
