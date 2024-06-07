@@ -11,7 +11,7 @@ func _ready():
 		
 		# Set the player's position to the next spawn position from the Global script
 		player.position = PortalDataSingleton.player_next_spawn_position
-		print("The player position in locker room: ", player.position)
+		print("The player position in classroom: ", player.position)
 		
 		# Set the player's facing direction based on a global variable
 		if PortalDataSingleton.player_facing_left:
