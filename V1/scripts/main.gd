@@ -81,13 +81,23 @@ func _on_menu_start_level(path: String):
 	change_level(path, 0, player);
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
 	
-
 func change_level(path: String, spawn_point_idx: int, player: Player):
+	print("1")
 	for child in level_container.get_children():
+		print("2")
+		child.player_holder.remove_child(player)
+		print("3")
 		child.queue_free();
+	print("4")
 	
+	print("5")
 	var level = load(path).instantiate();
+	print("6")
 	current_level = level
+	print("7")
 	level.set_player(player);
+	print("8")
 	level_container.add_child(level);
+	print("9")
 	level.spawn_player_in(spawn_point_idx);
+	print("10")

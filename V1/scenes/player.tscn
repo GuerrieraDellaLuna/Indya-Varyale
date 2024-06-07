@@ -123,6 +123,7 @@ player = NodePath("..")
 mesh = NodePath("../MeshInstance3D")
 
 [connection signal="input_dir_changed" from="." to="MovementController" method="_on_input_dir_change"]
+[connection signal="died" from="CanvasLayer/Healthbar" to="." method="_on_died"]
 [connection signal="camera_h_rotation_changed" from="CameraRoot" to="MovementController" method="_on_camera_h_rotation_changed"]
 
 [editable path="MeshInstance3D/walk"]

@@ -58,3 +58,9 @@ func _physics_process(delta):
 func set_nearby_collectable(collectable: Collectable):
 	nearby_collectable = collectable
 
+func _on_died():
+	self.scale = Vector3(1.0, 1.0, 1.0);
+	self.speed = 3;
+	health = health_bar.max_value
+	health_bar.health = health
+	Main.change_level("res://scenes/locker_room.tscn", 0, self)

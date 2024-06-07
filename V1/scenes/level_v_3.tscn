@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6kox24q10brx"]
+[gd_scene load_steps=8 format=3 uid="uid://b6kox24q10brx"]
 
 [ext_resource type="Script" path="res://scripts/level_v_3.gd" id="1_2btmd"]
 [ext_resource type="PackedScene" uid="uid://drnys0gd6y2ug" path="res://scenes/scenario.tscn" id="2_qe48i"]
 [ext_resource type="PackedScene" uid="uid://ctgfs5wng6v2p" path="res://scenes/monster.tscn" id="3_wrdwm"]
 [ext_resource type="PackedScene" uid="uid://eegpf7tycsqx" path="res://scenes/page.tscn" id="4_i3tmg"]
 [ext_resource type="PackedScene" uid="uid://dlnun7e6rvtdi" path="res://scenes/collectible.tscn" id="5_kkdm1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ldm3b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b3fe5"]
+size = Vector3(101.889, 1, 100.042)
 
 [node name="Level_V3" type="Node3D"]
 top_level = true
@@ -15,10 +20,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3487, 0.778806, 15.04)
 
 [node name="SpawnPointHolder" type="Node3D" parent="."]
 
-[node name="SP1" type="Node3D" parent="SpawnPointHolder"]
+[node name="SP0" type="Node3D" parent="SpawnPointHolder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1574, 0.800192, -34.9664)
 
-[node name="SP2" type="Node3D" parent="SpawnPointHolder"]
+[node name="SP1" type="Node3D" parent="SpawnPointHolder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3487, 0.778806, 15.04)
 
 [node name="PlayerHolder" type="Node3D" parent="."]
@@ -52,3 +57,10 @@ transform = Transform3D(-1.74846e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.74846e-0
 
 [node name="Monster2" parent="." instance=ExtResource("3_wrdwm")]
 transform = Transform3D(-1.74846e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.74846e-09, 30.5302, 0.450041, 19.5323)
+
+[node name="Ceiling" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ldm3b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.54608, 4.40496, 4.33325)
+shape = SubResource("BoxShape3D_b3fe5")

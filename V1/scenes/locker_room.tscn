@@ -91,6 +91,13 @@ shadow_mesh = SubResource("ArrayMesh_rfv28")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2154, 3.54, 65.4937)
 script = ExtResource("1_djclk")
 
+[node name="SpawnPointHolder" type="Node3D" parent="."]
+
+[node name="SP0" type="Node3D" parent="SpawnPointHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.44241, 2.97394, -69.8999)
+
+[node name="PlayerHolder" type="Node3D" parent="."]
+
 [node name="Classroom" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -10.5668, 3.97179, -71.9439)
 mesh = SubResource("ArrayMesh_2ljlm")
@@ -111,24 +118,14 @@ transform = Transform3D(1, 0, 0, 0, 0.718454, 0.695574, 0, -0.695574, 0.718454, 
 visible = false
 
 [node name="Portal" parent="." instance=ExtResource("9_umdii")]
-transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -10.5232, 3.5, -75.7786)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -10.5342, 3.50678, -75.4376)
 next_area = "res://scenes/level_v_3.tscn"
-
-[node name="Plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(-13.5547, 1.50996e-07, 0, -2.0467e-06, -1, 0, 0, 0, 10.7012, -10.3904, 8.43781, -56.2289)
-mesh = SubResource("ArrayMesh_frov6")
-skeleton = NodePath("")
 
 [node name="DoorModel" parent="." instance=ExtResource("6_natt8")]
 transform = Transform3D(-0.3, 0, -4.52987e-08, 0, 0.3, 0, 4.52987e-08, 0, -0.3, -10.5745, 2.6143, -74.9555)
 
 [node name="Plane2" type="MeshInstance3D" parent="."]
 transform = Transform3D(9.21535, -2.1977e-06, 0, 1.49414e-06, 1, 0, 0, 0, 14.663, -8.75954, 1.97654, -69.0323)
-mesh = SubResource("ArrayMesh_frov6")
-skeleton = NodePath("")
-
-[node name="Plane3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.76076e-14, 4.37114e-08, 14.663, 9.21535, -4.37114e-08, 0, 4.02816e-07, 1, -6.40942e-07, -10.1345, 1.97654, -80.7981)
 mesh = SubResource("ArrayMesh_frov6")
 skeleton = NodePath("")
 
