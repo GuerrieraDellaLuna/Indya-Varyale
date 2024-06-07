@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6kox24q10brx"]
+[gd_scene load_steps=7 format=3 uid="uid://b6kox24q10brx"]
 
-[ext_resource type="Script" path="res://scripts/level_v_3.gd" id="1_2btmd"]
+[ext_resource type="Script" path="res://scenes/level_v_3.gd" id="1_2btmd"]
+[ext_resource type="PackedScene" uid="uid://d2c2qehxlnihr" path="res://scenes/player.tscn" id="2_fr75u"]
 [ext_resource type="PackedScene" uid="uid://drnys0gd6y2ug" path="res://scenes/scenario.tscn" id="2_qe48i"]
-[ext_resource type="PackedScene" uid="uid://ctgfs5wng6v2p" path="res://scenes/monster.tscn" id="3_wrdwm"]
+[ext_resource type="PackedScene" uid="uid://bmt5e3uy7fwue" path="res://scenes/monster.tscn" id="3_wrdwm"]
 [ext_resource type="PackedScene" uid="uid://eegpf7tycsqx" path="res://scenes/page.tscn" id="4_i3tmg"]
 [ext_resource type="PackedScene" uid="uid://dlnun7e6rvtdi" path="res://scenes/collectible.tscn" id="5_kkdm1"]
 
@@ -10,36 +11,19 @@
 top_level = true
 script = ExtResource("1_2btmd")
 
-[node name="PendantSource" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3487, 0.778806, 15.04)
-
-[node name="SpawnPointHolder" type="Node3D" parent="."]
-
-[node name="SP0" type="Node3D" parent="SpawnPointHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1574, 0.800192, -34.9664)
-
-[node name="SP1" type="Node3D" parent="SpawnPointHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3487, 0.778806, 15.04)
-
-[node name="PlayerHolder" type="Node3D" parent="."]
-transform = Transform3D(1, 0, -7.45058e-09, -1.49012e-08, 1, 0, 2.23517e-08, 0, 1, 0, 4.76837e-07, 0)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, -7.33922, 7.13026, 4.41469)
 visible = false
 shadow_enabled = true
 
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_fr75u")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.37301, 0)
+
 [node name="scenario" parent="." instance=ExtResource("2_qe48i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5456, 0, -65.4663)
 
 [node name="page" parent="." instance=ExtResource("4_i3tmg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21976, -1.0474, 13.5369)
-
-[node name="page2" parent="." instance=ExtResource("4_i3tmg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21976, -0.689448, 21.2758)
-
-[node name="page3" parent="." instance=ExtResource("4_i3tmg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75156, -0.689448, 21.2758)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -1.73253, 0)
 
 [node name="StaticBody3D" parent="." instance=ExtResource("5_kkdm1")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -13.8375, 0.626637, 0)

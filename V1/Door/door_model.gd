@@ -2,15 +2,14 @@ extends Node3D
 
 var player_infront = false
 var door_state = false
-
+@export var teleport_scene: String
+	
 func _input(event):
 	if Input.is_action_just_pressed("open_door"):
-		if player_infront and not $AnimationPlayer.is_playing():
-			door_state = !door_state
-			if door_state:
-				$AnimationPlayer.play("DoorOpen")
-			else:
-				$AnimationPlayer.play("DoorClose")
+		var player = Main.get_player();
+		player.scale = Vector3(4.5, 4.5, 4.5);
+		player.speed = 5;
+		Main.change_level(teleport_scene, 1, player);
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("player"):

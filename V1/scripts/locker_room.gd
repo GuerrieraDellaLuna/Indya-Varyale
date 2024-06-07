@@ -1,7 +1,7 @@
 extends StaticBody3D
 
 # Path to the player scene file
-var player_path: String = "res://scenes/player.tscn"
+const player_path: String = "res://scenes/player.tscn"
 
 @onready var player_holder: Node3D = $PlayerHolder
 var spawn_points: Array[Node3D] = []

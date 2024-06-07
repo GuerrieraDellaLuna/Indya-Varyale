@@ -6,8 +6,8 @@ extends StaticBody3D
 @export var item_resource: Resource
 
 func _ready():
-	$Area3D.connect("body_entered", Callable(self, "_on_Area3D_body_entered"))
-	$Area3D.connect("body_exited", Callable(self, "_on_Area3D_body_exited"))
+	$Area3D.connect("body_entered", _on_Area3D_body_entered)
+	$Area3D.connect("body_exited", _on_Area3D_body_exited)
 	# Load the resource programmatically for testing
 	item_resource = ResourceLoader.load("res://Resources/Items/camera.tres")
 	print("Collectable ready, item_resource:", item_resource)
@@ -36,10 +36,8 @@ func collect() -> void:
 	
 func _on_Area3D_body_entered(body):
 	if body.is_in_group("player"):
-		print("Player entered the area")
 		body.set_nearby_collectable(self)
 
 func _on_Area3D_body_exited(body):
 	if body.is_in_group("player"):
-		print("Player exited the area")
 		body.set_nearby_collectable(null)
