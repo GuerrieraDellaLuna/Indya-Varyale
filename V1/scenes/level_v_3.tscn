@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6kox24q10brx"]
 
-[ext_resource type="Script" path="res://scenes/level_v_3.gd" id="1_2btmd"]
+[ext_resource type="Script" path="res://scripts/level_v_3.gd" id="1_2btmd"]
 [ext_resource type="PackedScene" uid="uid://d2c2qehxlnihr" path="res://scenes/player.tscn" id="2_fr75u"]
 [ext_resource type="PackedScene" uid="uid://drnys0gd6y2ug" path="res://scenes/scenario.tscn" id="2_qe48i"]
 [ext_resource type="PackedScene" uid="uid://ctgfs5wng6v2p" path="res://scenes/monster.tscn" id="3_wrdwm"]
