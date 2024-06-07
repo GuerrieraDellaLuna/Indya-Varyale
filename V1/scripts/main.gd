@@ -1,20 +1,21 @@
 extends Node3D
 
-var ui_container: Control;
-var book_data: BookData;
+const player_scene = preload("res://scenes/player.tscn")
+
+@onready var ui_container: Control = $"UI Container";
+@onready var main_menu: MainMenu = $"UI Container/Menu";
+@onready var level_container: Node3D = $"Level Container";
+
 var book_ui: BookUI;
 
 var can_open_book: bool = true;
 var book_open: bool = false;
+var current_level
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ui_container = %"UI Container";
-	
-	book_data = BookData.create_new();
-	book_ui = BookUI.create_new(book_data);
-	book_ui.hide();
-	ui_container.add_child(book_ui, false, Node.INTERNAL_MODE_DISABLED);
+	Save.save_data.book = BookData.create_new();
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
@@ -53,3 +54,40 @@ func close_book() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED	
 	book_ui.hide();
 	return;
+	
+func get_current_level():
+	return current_level
+
+func get_player() -> Player:
+	if current_level == null:
+		printerr("Tried to get player, but current_level is null")
+		return null
+	
+	if not current_level.has_method("get_player"):
+		printerr("Tried to get player, but current_level doesn't have method get_player")
+		return null
+	
+	return current_level.get_player();
+	
+func _on_menu_start_level(path: String):
+	main_menu.hide();
+	
+	book_ui = BookUI.create_new(Save.save_data.book);
+	book_ui.hide();
+	ui_container.add_child(book_ui);
+	
+	var player = player_scene.instantiate();
+	player.scale = Vector3(4.5, 4.5, 4.5);
+	change_level(path, 0, player);
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
+	
+
+func change_level(path: String, spawn_point_idx: int, player: Player):
+	for child in level_container.get_children():
+		child.queue_free();
+	
+	var level = load(path).instantiate();
+	current_level = level
+	level.set_player(player);
+	level_container.add_child(level);
+	level.spawn_player_in(spawn_point_idx);

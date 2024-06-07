@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Prototype_V1"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/emptynode.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,7 @@ AppConfig="*res://addons/maaacks_menus_template/base/scenes/Autoloads/AppConfig.
 SceneLoader="*res://addons/maaacks_menus_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 PortalDataSingleton="*res://scripts/PortalDataSingleton.gd"
+Main="*res://scenes/main.tscn"
 
 [display]
 
@@ -87,6 +88,11 @@ move={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
+]
+}
+open_door={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":76,"key_label":0,"unicode":108,"echo":false,"script":null)
 ]
 }
 

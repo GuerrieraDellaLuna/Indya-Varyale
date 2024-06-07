@@ -1,6 +1,6 @@
 class_name HealthBar extends ProgressBar
 
-signal die();
+signal died();
 
 @onready var timer = $Timer
 @onready var damage_bar = $DamageBar
@@ -13,7 +13,7 @@ func _set_health(new_health):
 	value = health
 	
 	if health <= 0:
-		die.emit()
+		died.emit()
 		return
 		
 	if health < prev_health:

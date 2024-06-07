@@ -4,16 +4,22 @@ var animationPlayer2 : AnimationPlayer
 var speed = 0.7
 var direction = Vector3()
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var chaseDistance = 3.0
-var hitDistance = 1
-@onready var player = $"../Player"
-
+var chaseDistance = 6.0
+var hitDistance = 3
+var player: Player
+var hit_damage: int = 34
 
 func _ready():
 	animationPlayer = $AnimationPlayer
 	animationPlayer2 = $AnimationPlayer2
 	randomize_direction()
 
+func damage_player(name: String):
+	if name != "atack":
+		return
+	
+	player.health_bar.health -= hit_damage
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if animationPlayer.is_playing():
@@ -32,12 +38,17 @@ func _physics_process(delta):
 		var target_rotation = atan2(direction.x, direction.z)
 		rotation.y = target_rotation
 
+	if not player:
+		player = Main.get_player()
+
 	if player:
 		var playerPosition = player.global_transform.origin
 		var distanceToPlayer = global_transform.origin.distance_to(playerPosition)
 		if distanceToPlayer < hitDistance:
 			animationPlayer.stop()
 			animationPlayer2.play("atack")
+			if animationPlayer2.animation_finished.get_connections().size() == 0:
+				animationPlayer2.animation_finished.connect(damage_player);
 		else:
 			animationPlayer2.stop()
 			animationPlayer.play("walk")

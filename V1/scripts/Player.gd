@@ -11,25 +11,25 @@ const MOUSE_SENSITIVITY = 0.0015
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var health = 100
 
-@onready var spring_arm: SpringArm3D = $SpringArm3D
+@onready var spring_arm: SpringArm3D = %SpringArm3D
 @onready var model: MeshInstance3D = $MeshInstance3D
 @onready var animation_player: AnimationPlayer = $MeshInstance3D/walk/AnimationPlayer
+@onready var camera: Camera3D = %Camera3D
 var health_bar: HealthBar
 
 var input_dir: Vector3
-var speed: float = 3
+var speed: float = 5
 var acceleration: float = 5
 const speed_still: float = 0
 const speed_moving: float = 3
-
 
 var nearby_collectable: Collectable = null
 
 func _ready():
 	health_bar = %Healthbar
 	health_bar.init_health(health)
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	input_dir_changed.emit(input_dir)
+	camera.make_current()
 
 func _set_health(value):
 	health = value
